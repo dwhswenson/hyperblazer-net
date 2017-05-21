@@ -1,0 +1,15 @@
+---
+categories: ['research', 'scivr']
+tags: ['poster']
+layout: page
+title: ACS poster on precision finite difference monodromy matrix
+---
+
+{:pdflink: data-fancybox=""}
+
+I presented a poster at the spring 2010 ACS National Meeting in San
+Francisco about my precision finite difference approach to calculate the
+monodromy matrix. The poster was called "Monodromy matrix calculation by the
+precision finite difference method."
+
+[See poster](/assets/posters/PrecisionFiniteDiff_ACS_Sp2010.pdf){: pdflink}

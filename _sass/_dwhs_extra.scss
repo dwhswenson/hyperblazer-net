@@ -1,0 +1,37 @@
+.right-image {
+    float: right;
+    width: 30%;
+}
+
+.whole-post {
+    display: none;
+}
+
+.answer {
+    display: none;
+}
+
+.more {
+    display: none;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -10px;
+    visibility: hidden
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

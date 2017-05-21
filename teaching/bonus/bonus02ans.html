@@ -1,0 +1,58 @@
+  <div class="bonus">
+  <ol>
+    <li><p>First we'll figure out the spacing for the vibrational levels:</p>
+    <p>h&nu;((<i>v</i>+1)+1/2)- h&nu;(<i>v</i>+1/2) = h&nu;</p>
+    <p>We're looking for <i>J</i> such that the energy of the rotational
+    motion, <i>BJ</i>(<i>J</i> + 1) is greater than or equal to h&nu;. Since
+    the rotational energy increases as <i>J</i> increases, we just need to
+    find the value of <i>J</i> for which the energy is exact, and round up
+    to the next integer. So we solve the quadratic equation:</p>
+    <p><i>BJ</i>(<i>J</i> + 1) = h&nu;<br />
+    <i>BJ</i><sup>2</sup> + <i>BJ</i> - h&nu; = 0<br />
+    <i>J</i> = 1/2 (-1 + (1 + 4h&nu;/B)<sup>1/2</sup>)</p>
+    <p>where the positive root is chosen because <i>J</i> must be positive.
+    Plugging in numbers for N<sub>2</sub>, we obtain <i>J</i> = 33.9, so the
+    lowest physically meaningful <i>J</i> for which this is true is <i>J</i>
+    = 34.</li>
+    
+    <li><p>As above, the vibrational energy spacing is h&nu;. Now we need to
+    find the rotational energy spacing; that is, the energy difference
+    between the rotational state <i>J</i> + 1 and the rotational state
+    <i>J</i>.</p>
+    <p>E<sub><i>J</i>+1</sub>-E<sub><i>J</i></sub> = <i>B</i>(<i>J</i> +
+    1)(<i>J</i> + 2) - <i>BJ</i>(<i>J</i> + 1) = <i>B</i>(<i>J</i> +
+    1)((<i>J</i> + 2) - <i>J</i>) = 2<i>B</i>(<i>J</i> + 1)</p>
+    <p>Setting this equal to h&nu; and rearranging a bit, we obtain <i>J</i>
+    = (h&nu;)/(2<i>B</i>) - 1. Plugging in the numbers for N<sub>2</sub>, we
+    find that <i>J</i> = 589.
+  </ol>
+
+  <p>When we compare the energy spacings to the thermal energy, we note that
+  the average thermal energy at room temperature is about a tenth of the
+  vibrational energy spacing, but is a hundred times the rotational energy
+  constant. The thermal energy would correspond to a rotational quantum
+  number of <i>J</i> = 9 or 10, substantially less than the <i>J</i> = 34 of
+  part 1.</p>
+
+  <p>As mentioned in the problem, the ratios of different states at a given
+  temperature can be calculated using techniques which you will learn in Chem
+  120B. For the vibrational distribution, you can see the calculation done on
+  page 742 of McQuarrie and Simon, which gives 1.31&times;10<sup>-5</sup> as
+  the fraction in the first excited vibrational state, with nearly everything
+  else in the ground state.</p>
+
+  <p>The rotational states have a more interesting distribution. The details
+  of the calculation can be found on pages 744-748 of McQuarrie and
+  Simon (but be careful, because Prof. Miller defines <i>B</i> in a different
+  way than McQuarrie and Simon). The following graph plots the fraction of
+  molecules in the first few energy levels. As you can see, the peak is
+  around <i>J</i> = 6 or 7. A rotational quantum number of <i>J</i> = 34
+  would be extremely unusual at room temperature. In fact, it would
+  contribute a little less to the total population than the first excited
+  vibrational state does, since what actually determines the contribution is
+  the energy (and the energy for <i>J</i>=34 is a little higher than the
+  energy for <i>v</i>=1).</p>
+
+  <p><img src="bonus/N2_rot_dist.png" alt="N_2 rotational distribution" /></p>
+
+  </div><!--bonus-->

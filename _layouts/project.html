@@ -1,0 +1,38 @@
+---
+layout: page
+---
+
+{% capture more_text 
+   %}{{ page.content | remove: page.excerpt }}{% endcapture %}
+
+<div class="post-preview">
+  <div class="excerpt">
+    <p>{{ page.excerpt }}</p>
+  </div>
+  <div class="more">
+    <p>{{ more_text }}</p>
+  </div>
+
+  {% unless more_text.size == 0 %}
+  <a href="#" class="toggle_more">Show more</a>
+  {% endunless %}
+  
+</div>
+
+<!-- next we find any talks or papers on this topic -->
+
+<h3>Articles and presentations resulting from this work:</h3>
+
+{% unless site.categories[page.category].size > 0 %}
+<p>No posts in {{ page.category }} at this time.</p>
+{% endunless %}
+
+<ul>
+{% for post in site.categories[page.category] %}
+    {% if post.tags contains "talk" or post.tags contains "paper"
+                                    or post.tags contains "poster" %}
+  <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}
+      </a></li>
+    {% endif %}
+{% endfor %}
+</ul>
