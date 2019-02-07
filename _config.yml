@@ -58,7 +58,7 @@ urlimg: '/assets/' #'https://phlow.github.io/feeling-responsive/images/'
 logo: "logo.png"
 
 # Gems
-gems:
+plugins:
     - jekyll-feed
     #- jekyll-asciidoc
     #- jekyll-gist
@@ -78,7 +78,7 @@ gems:
 
 # Theme works best with Kramdown (using the table of contents function)
 markdown: kramdown
-permalink: /:categories/:title/
+permalink: /:categories/:year/:title/
 highlight: rouge
 excerpt_separator: "<!-- more -->"
 include: ['.htaccess']
@@ -244,7 +244,7 @@ sass:
 #
 # used in _includes/footer_scripts
 
-#google_analytics_tracking_id: UA-60112281-1
+google_analytics_tracking_id: UA-4006053-1
 
 
 

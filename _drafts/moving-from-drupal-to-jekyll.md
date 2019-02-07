@@ -91,3 +91,31 @@ I also have an old, now unused, `unison` server on there.
 Now that the website is based on Jekyll, it is easily transferred anywhere.
 The code repositories could either be opened and put on GitHub, or there are
 ways to
+
+---
+
+Some notes on getting Jekyll running on BlueHost. They really don't make it
+easy, since they have ancient versions of a lot of software. In particular,
+Jekyll requires a version of Ruby that has been released sometime in the
+last 5 years.
+
+Now, my standard package manager is `conda`, which makes it easy for me to
+install things. But it seemed to have a problem with Ruby, based on the fact
+that the installed glibc is even more ancient glibc 4.12 (conda's ruby
+package seems to require 2.17, released in 2012).
+
+So I got mixed up with a second package manager, Linuxbrew, which
+specifically promises to make it easy to install a new glibc. (Older
+conda-based approaches were seriously problematic.) Unfortunately, it seemed
+that it wasn't quite as easy as claimed to install a new glibc with my
+system's built-in gcc (even though it was version 4.4, which is supposed to
+be supported). It kept complaining
+
+    Error: glibc cannot be built with any available compilers.
+    Install Clang or brew install gcc
+
+And `brew install gcc` gave the same complaint.
+
+So what I ended up doing was to install gcc-4.8 using conda, and then
+install everything else (ruby, glibc) using brew. From there, it was
+straightforward to install Jekyll.
