@@ -5,6 +5,9 @@ tags: ['paper']
 doi: 10.1080/00268976.2012.665505
 journal: MolPhys
 layout: page
+teaser: > 
+    The second paper on the DCMF method, this shows that it can work on a more
+    complicated model.
 ---
 
 Our paper on applying the classical mapping for fermions to the Holstein

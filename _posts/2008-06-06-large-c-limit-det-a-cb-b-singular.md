@@ -1,6 +1,8 @@
 ---
 title: The large c limit of det(A+cB) where B is singular
 layout: page
+teaser: >
+    Solution to a litte math problem my PhD advisor asked about.
 ---
 
 <div class="note" markdown="1">

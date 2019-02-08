@@ -3,6 +3,8 @@ categories: ['research', 'scivr']
 tags: ['poster']
 layout: page
 title: ACS poster on precision finite difference monodromy matrix
+teaser: >
+    Poster on a method I developed to calculate the monodromy matrix.
 ---
 
 {:pdflink: data-fancybox=""}

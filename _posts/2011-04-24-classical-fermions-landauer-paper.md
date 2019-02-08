@@ -5,6 +5,9 @@ tags: ['paper']
 doi: 10.1063/1.3583366
 journal: JCP
 layout: page
+teaser: > 
+    Paper introducting my "dynamics of classically mapped fermions", with an
+    application to molecular electronics
 ---
 
 Our paper developing a classical mapping for many-fermion systems, which

@@ -1,6 +1,8 @@
 ---
 title: Tracking the Maslov index
 layout: page
+teaser: >
+    A little trick to track the Maslov index in semiclassical calculations.
 ---
 
 The Maslov index helps track the sign of the contributions in a
@@ -13,9 +15,3 @@ how to optimize performance.
 
 <a href="/teaching/maslov-implementation.pdf" data-fancybox>Read PDF</a>
 
-<div class="note" markdown="1">
-
-This post was written long after the original document. The date on the post
-roughly corresponds to the document itself, not to the writing of this post.
-
-</div>

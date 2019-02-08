@@ -5,6 +5,9 @@ doi: 10.1016/j.chemphys.2006.02.009
 journal: ChemPhys
 layout: page
 title: Paper on hydrogen clustering around benzene
+teaser: >
+    The first paper I submitted, developing a potential energy surface for
+    hydrogen clustering around benzene.
 ---
 
 My paper developing a potential energy surface to the H<sub>2</sub>-benzene

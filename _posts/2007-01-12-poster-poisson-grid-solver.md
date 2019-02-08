@@ -3,6 +3,8 @@ categories: ['research', 'grid-poisson']
 tags: ['poster']
 layout: page
 title: Poster on grid-based Poisson solver at Mini Stat Mech Meeting
+teaser: >
+    Poster on a Poisson solver presented at the 2007 Mini Stat Mech Meeting.
 ---
 {:pdflink: data-fancybox=""}
 
