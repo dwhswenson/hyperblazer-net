@@ -1,0 +1,6 @@
+<div class="slidesWrapper{{ include.aspectRatio }}">
+<iframe width='100%' height='75%' 
+        src="{{ include.content }}"
+        frameborder='0' allowfullscreen></iframe>
+</div>
+

@@ -14,4 +14,4 @@ Francisco about my precision finite difference approach to calculate the
 monodromy matrix. The poster was called "Monodromy matrix calculation by the
 precision finite difference method."
 
-[See poster](/assets/posters/PrecisionFiniteDiff_ACS_Sp2010.pdf){: pdflink}
+{% include poster poster="PrecisionFiniteDiff_ACS_Sp2010" %}

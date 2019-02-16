@@ -12,7 +12,4 @@ meeting includes a research presentation and the literature presentation. I
 decided to have a little fun with one of my literature presentations, so I
 did the whole thing as a sequence of limericks.
 
-<div class="videoWrapper">
-<iframe width='100%' height='60%' src='//player.vimeo.com/video/81289093'
-        frameborder='0' allowfullscreen></iframe>
-</div>
+{% include video src='//player.vimeo.com/video/81289093' %}

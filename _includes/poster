@@ -1,0 +1,4 @@
+<!-- TODO: add thumbnails for posters -->
+<a href="/assets/posters/{{ include.poster }}.pdf" data-fancybox>
+See poster
+</a>

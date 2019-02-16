@@ -1,0 +1,5 @@
+<div class="videoWrapper">
+<iframe width='100%' height='60%' frameborder='0' allowfullscreen
+        src='{{ include.src }}'></iframe>
+</div>
+  

@@ -16,7 +16,4 @@ transition interface sampling," and was part of the "Coarse-graining and
 Multiscale Modeling" session organized by the Division of Physical
 Chemistry.
 
-<div class="videoWrapper">
-<iframe width='100%' height='60%' src='//player.vimeo.com/video/81197769'
-        frameborder='0' allowfullscreen></iframe>
-</div>
+{% include video src='//player.vimeo.com/video/81197769' %}
