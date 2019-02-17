@@ -5,6 +5,9 @@ tags: ['paper']
 doi: 10.1063/1.4890037
 journal: JCP
 title: Paper on multiple interface set transition interface sampling
+teaser: >
+  The paper introducing my MISTIS method has been published in the Journal of
+  Chemical Physics.
 ---
 
 My paper introducing multiple interface set transition interface sampling
