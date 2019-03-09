@@ -23,7 +23,9 @@
 	<title>{{ title }}</title>
 
     <link rel="stylesheet" type="text/css" href="{{ url }}/assets/css/styles_feeling_responsive.css">
-    <link rel="stylesheet" type="text/css" href="{{ url }}/assets/css/jquery.fancybox.css">
+    <!--<link rel="stylesheet" type="text/css" href="{{ url }}/assets/css/jquery.fancybox.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
+
 
   {% if site.asciidoctor-enabled == true %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -57,8 +59,11 @@
 </script>
         <script type="text/javascript"
         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script src="{{ url }}/assets/js/jquery.fancybox.min.js"></script>
-        <script src="{{ url }}/assets/js/dwhs_extra.js"></script>
+        <!--<script src="{{ url }}/assets/js/jquery.fancybox.min.js"></script>-->
+        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+
+        <script src="{{ url }}/assets/js/dwhs_extra.js"></script
 
 	<noscript>
 		<link
