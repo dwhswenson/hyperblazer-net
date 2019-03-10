@@ -12,4 +12,4 @@ fi
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-cd $DIR && git pull && bundle exec jekyll build -I -d $DEPLOY_DIR
+cd $DIR && git pull && bundle exec jekyll build -d $DEPLOY_DIR
