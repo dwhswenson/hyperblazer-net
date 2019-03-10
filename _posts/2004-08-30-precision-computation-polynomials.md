@@ -5,14 +5,15 @@ teaser: >
     polynomials.
 layout: page
 ---
-
+{:pdflink: class="fancybox-pdf"}
 
 I'd had a debate about the importance of using single vs.  double precision
 in calculations based on polynomials. I decided to do a little math on it. I
 doubt this is anything groundbreaking, but some people might find the math
 interesting.
 
-<a href="/teaching/precision.pdf" data-fancybox>Read PDF</a>
+[Read PDF](/teaching/precision.pdf){:pdflink}
+<!--<a href="/teaching/precision.pdf" data-fancybox>Read PDF</a>-->
 
 <!--<object data="/teaching/precision.pdf" type="application/pdf" width="100%"
 height="1000px">

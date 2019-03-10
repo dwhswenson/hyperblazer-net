@@ -4,13 +4,13 @@ title: About
 permalink: /dwhs/
 ---
 
-{:pdflink: data-fancybox=""}
+{:pdflink: class="fancybox-pdf"}
 
 Some quick information about the site, and about me:
 
 * [About the name](/about-name/)
 * [About the logo](/logo/)
-* [My CV][cv]{: data-fancybox=""}
+* [My CV][cv]{:pdflink}
 * [My PhD dissertation](/thesis/)
 
 [cv]: /dwhs/dwhs_cv.pdf

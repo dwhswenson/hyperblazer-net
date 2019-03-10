@@ -4,6 +4,7 @@ layout: page
 teaser: >
     A little trick to track the Maslov index in semiclassical calculations.
 ---
+{:pdflink: class="fancybox-pdf"}
 
 The Maslov index helps track the sign of the contributions in a
 semiclassical IVR calculation, in order to ensure that they stay continuous.
@@ -13,5 +14,6 @@ necessarily a vital improvement in performance (other aspects of the
 calculation are more computationally expensive), it is a good example of
 how to optimize performance.
 
-<a href="/teaching/maslov-implementation.pdf" data-fancybox>Read PDF</a>
+[Read PDF](/teaching/maslov-implementation.pdf){:pdflink}
+<!--<a href="/teaching/maslov-implementation.pdf" data-fancybox>Read PDF</a>-->
 
