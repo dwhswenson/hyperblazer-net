@@ -23,29 +23,36 @@ a.anchor {
 }
 
 .videoWrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
 }
 .videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 	height: 100%;
 }
 
 .slidesWrapper4x3 {
-	position: relative;
-	padding-bottom: 70.5%; /* 4:3-ish */
-	padding-top: 25px;
-	height: 0;
+    position: relative;
+    padding-bottom: 70.5%; /* 4:3-ish */
+    padding-top: 25px;
+    height: 0;
 }
 .slidesWrapper4x3 iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px !important;
+    min-width: 100%;
+    *width: 100%;  // IE6
+    height: 10px !important;
+    min-height: 100%;
+}
+
+.posterWrapper {
+    -webkit-overflow-scrolling: touch !important;
 }
