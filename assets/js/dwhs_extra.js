@@ -16,4 +16,26 @@ $('a.toggle_answer').click(function () {
     $(this).parent().siblings('.answer').slideToggle(500); 
 });
 
+// from https://stackoverflow.com/a/40278742/4205735
+var pdfOpenParams = "#page=1&pagemode=none"; //pagemode=none,bookmarks,thumbs
+$(".fancybox-pdf").fancybox({
+    type: 'iframe',
+    padding: 0,
+    openEffect: 'fade',
+    openSpeed: 150,
+    closeEffect: 'fade',
+    closeSpeed: 150,
+    width: '60%',
+    height: '100%',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    iframe: {
+        preload: false
+    },
+    beforeLoad: function() {
+        var url = $(this.element).attr("href");
+        this.href = "https://mozilla.github.io/pdf.js/web/viewer.html?file=" + url + pdfOpenParams;
+    });
+});
+
 });
