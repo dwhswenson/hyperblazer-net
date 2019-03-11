@@ -8,12 +8,10 @@ permalink: /dwhs/
 
 Some quick information about the site, and about me:
 
+* [My CV](/dwhs/dwhs_cv.pdf){:pdflink}
+* [My PhD dissertation](/thesis/)
 * [About the name](/about-name/)
 * [About the logo](/logo/)
-* [My CV][cv]{:pdflink}
-* [My PhD dissertation](/thesis/)
-
-[cv]: /dwhs/dwhs_cv.pdf
 
 And just in case you're wondering whether you've found the right David
 Swenson, here are some things you might know me from:
