@@ -9,7 +9,7 @@ about science. For now, they're roughly separated into subject areas.
 I plan to release most of these under a Creative Commons license. Until
 then, please consider all rights reserved unless otherwise stated.
 
-{:pdflink: class="fancybox-pdf"}
+{:pdflink: data-fancybox=""}
 
 ### Mathematics
 

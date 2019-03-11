@@ -4,7 +4,7 @@ title: About
 permalink: /dwhs/
 ---
 
-{:pdflink: class="fancybox-pdf"}
+{:pdflink: data-fancybox=""}
 
 Some quick information about the site, and about me:
 

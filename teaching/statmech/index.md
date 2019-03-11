@@ -13,7 +13,7 @@ explanations, to many of the problems. I've uploaded them here.
 [imsm]: https://www.amazon.com/Introduction-Modern-Statistical-Mechanics-Chandler/dp/0195042778/
 [chandler]: http://gold.cchem.berkeley.edu/David/
 
-{:pdflink: class="fancybox-pdf"}
+{:pdflink: data-fancybox=""}
 
 * [Exercise 1.6](chandler_ex_1_06.pdf){: pdflink}
 * [Exercise 1.10](chandler_ex_1_10.pdf){: pdflink}

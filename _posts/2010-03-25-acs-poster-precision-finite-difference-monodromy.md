@@ -7,7 +7,7 @@ teaser: >
     Poster on a method I developed to calculate the monodromy matrix.
 ---
 
-{:pdflink: class="fancybox-pdf"}
+{:pdflink: data-fancybox=""}
 
 I presented a poster at the spring 2010 ACS National Meeting in San
 Francisco about my precision finite difference approach to calculate the

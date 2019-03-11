@@ -6,7 +6,7 @@ title: Poster on grid-based Poisson solver at Mini Stat Mech Meeting
 teaser: >
     Poster on a Poisson solver presented at the 2007 Mini Stat Mech Meeting.
 ---
-{:pdflink: class="fancybox-pdf"}
+{:pdflink: data-fancybox=""}
 
 I presented a poster at the 2007 Mini Stat Mech Meeting in Berkeley about
 the grid-based Poisson solver that I was developing with Cristian Predescu.

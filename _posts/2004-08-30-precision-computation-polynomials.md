@@ -5,9 +5,9 @@ teaser: >
     polynomials.
 layout: page
 ---
-{:pdflink: class="fancybox-pdf"}
+{:pdflink: data-fancybox=""}
 
-I'd had a debate about the importance of using single vs.  double precision
+I'd had a debate about the importance of using single vs. double precision
 in calculations based on polynomials. I decided to do a little math on it. I
 doubt this is anything groundbreaking, but some people might find the math
 interesting.
