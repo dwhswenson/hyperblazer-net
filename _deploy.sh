@@ -4,7 +4,7 @@ if [ "$1" = "local" ]; then
     DEPLOY_DIR=./_site  # test deploy
 elif [ "$1" = "deploy" ]; then
     DEPLOY_DIR=~/public_html/jekyll_site  # actual deploy
-    JEKYLL_ENV=production
+    export JEKYLL_ENV=production
 else
     echo "Requires 'local' or 'deploy' command"
     exit
