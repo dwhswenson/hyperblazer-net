@@ -1,6 +1,6 @@
 ---
 title: Precision finite difference monodromy matrix
-category: pdf-monodromy
+category: pfd-monodromy
 layout: project
 ---
 

@@ -1,5 +1,5 @@
 ---
-categories: ['research', 'scivr']
+categories: ['research', 'scivr', 'pfd-monodromy']
 tags: ['poster']
 layout: page
 title: ACS poster on precision finite difference monodromy matrix

@@ -1,5 +1,6 @@
 ---
 title: Time-dependent sampling of the SC-IVR
+category: tdscivr
 layout: project
 ---
 
