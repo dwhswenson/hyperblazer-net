@@ -22,4 +22,6 @@ important.
 
 I developed a variant of this classical mapping approach which could be
 used for systems like molecular electronics, where there are many excitons
-and their fermionic character is important.
+and their fermionic character is important. We found that these methods were
+quite efficient and accurate, although I moved on to other topics after my
+Ph.D.

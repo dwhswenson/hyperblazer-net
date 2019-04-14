@@ -26,7 +26,4 @@ Projects within this research line have included:
   monodromy matrix](/research/pfd-monodromy)
 
 If you're interested in getting more of an introduction to the SC-IVR, I'd
-recommend either the first chapter of [my dissertation](/thesis) or some of
-these review articles:
-
-* TODO
+recommend the first chapter of [my dissertation](/thesis).

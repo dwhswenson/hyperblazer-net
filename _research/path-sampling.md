@@ -10,7 +10,7 @@ important problems in biological chemistry, such as protein conformational
 changes (often associated with cancer), drug binding and unbinding (to
 design more effective medicines), protein aggregation (important for
 understanding Alzheimer's), as well as problems in materials science, such
-as ???
+as crystallization.
 
 My work includes both methodological development of path sampling tools and
 application of those tools to problems in biological chemistry and materials
