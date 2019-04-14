@@ -36,11 +36,14 @@ Swenson, here are some things you might know me from:
   LLC][desres], in New York.
 * From August-December 2011, I was a post-doc at [Tel Aviv
   University][telaviv].
-* Since January 2012, I am a post-doc in the [Computational Chemistry
+* From 2012-2018, I was a post-doc in the [Computational Chemistry
   Group][molsim] of the [van 't Hoff Institute for Molecular Sciences][hims]
   at the [Universiteit van Amsterdam][uva].
 * During the fall of 2015, I was a visiting post-doc at [Memorial Sloan
   Kettering Cancer Center][mskcc], in New York.
+* Since October 2018, I am a post-doc in the [Centre Blaise
+  Pascal](http://www.cbp.ens-lyon.fr) at the [École Normale Supérieure de
+  Lyon](http://www.ens-lyon.fr/)
 
 If none of that fits the David Swenson you know, then it's probably not me.
 
