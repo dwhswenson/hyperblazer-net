@@ -21,3 +21,9 @@ explanations, to many of the problems. I've uploaded them here.
 * [Exercise 2.4](chandler_ex_2_04.pdf){: pdflink}
 * [Exercise 2.7](chandler_ex_2_07.pdf){: pdflink}
 * [Exercise 3.11](chandler_ex_3_11.pdf){: pdflink}
+* [Exercise 4.9](chandler_ex_4_09.pdf){: pdflink}
+* [Exercise 4.10](chandler_ex_4_10.pdf){: pdflink}
+* [On the Small Changes in Auxiliary Functions Near
+Equilibrium](SmallChangesAuxiliaryFcnsNearEquil.pdf){: pdflink} (the original
+TeX file was lost in a hard drive crash; this is a scan of the version I turned
+in as part of a homework assignment)
