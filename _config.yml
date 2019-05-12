@@ -60,6 +60,7 @@ logo: "logo.png"
 # Gems
 plugins:
     - jekyll-feed
+    - jekyll-sitemap
     #- jekyll-asciidoc
     #- jekyll-gist
     #- jekyll-paginate
@@ -136,6 +137,11 @@ defaults:
       # sidebar:        # Possible values › left, right › by default there will be no sidebar
       comments: false
       author: dwhs     # Default author for posts
+  -
+    scope:
+      path: "assets/talks/*"
+    values:
+      sitemap: false
 
 
 
