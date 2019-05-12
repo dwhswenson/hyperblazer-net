@@ -15,20 +15,20 @@
   side: left
   dropdown:
   - title: "Path Sampling"
-    url: "/research/path-sampling"
+    url: "/research/path-sampling/"
   - title: "Quantum Dynamics"
-    url: "/research/quantum-dynamics"
+    url: "/research/quantum-dynamics/"
   - title: "Miscellaneous"
-    url: "/research/misc"
+    url: "/research/misc/"
 
 - title: "Software"
   url: "/software/"
   side: left
   dropdown:
     - title: "OpenPathSampling"
-      url: "/software/openpathsampling"
+      url: "/software/openpathsampling/"
     - title: "Miscellaneous"
-      url: "/software/misc"
+      url: "/software/misc/"
 
 #- title: "All Posts"
   #url: "/blog/"
