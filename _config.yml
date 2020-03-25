@@ -79,7 +79,7 @@ plugins:
 
 # Theme works best with Kramdown (using the table of contents function)
 markdown: kramdown
-permalink: /:categories/:year/:title/
+permalink: /:year/:title/
 highlight: rouge
 excerpt_separator: "<!-- more -->"
 include: ['.htaccess']
@@ -140,6 +140,11 @@ defaults:
   -
     scope:
       path: "assets/talks/*"
+    values:
+      sitemap: false
+  -
+    scope:
+      path: "assets/fonts/*"
     values:
       sitemap: false
 
