@@ -87,6 +87,8 @@ should be taken very seriously.
 A few more details: This all falls in the tails of the distributions, so the
 important question is how I constructed those tails. I assumed an exponential
 tail. The parameters were fixed by matching the probability density at the edge of the uppermost bin and by normalization.
+All details of this procedure, including the source code to reproduce it, are
+available in the `expert_reanalysis` directory at: [https://github.com/dwhswenson/covid19-data-science](https://github.com/dwhswenson/covid19-data-science)
 
 Caveats: As stated previously, there's no specific reason to assume that the
 error in death estimates is correlated to the error in estimated cases.
@@ -95,6 +97,3 @@ cases, the death estimates come from extrapolating from the tails of
 distributions, which means that the numbers are extremely sensitive. If the
 values were around 95th percentile instead of 98th, that would shift the number
 of deaths by over half a million.
-
-All details of this procedure, including the source code to reproduce it, are
-available in the `expert_reanalysis` directory at: [https://github.com/dwhswenson/covid19-data-science](https://github.com/dwhswenson/covid19-data-science)
