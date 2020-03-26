@@ -5,7 +5,7 @@ layout: page
 title: Analysis of expert estimates COVID-19 deaths in the USA
 social_thumbnail:
   url: cases.svg
-  relative_to: 
+  from_root: false 
 teaser: >
   Asked to predict how many COVID-19 cases the US would have a week later,
   experts vastly underestimated. If their estimates of the number of deaths are

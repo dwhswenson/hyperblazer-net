@@ -16,10 +16,10 @@
 
 {% capture social_thumbnail %}
 {% if page.social_thumbnail %}
-  {% if page.social_thumbnail.relative_to %}
-  {{ page.social_thumbnail.url | prepend page.social_thumbnail.relative_to }}
+  {% if page.social_thumbnail.from_root %}
+  {{ url }}{{ page.social_thumbnail.url }}
   {% else %}
-  {{ page.social_thumbnail.url }}
+  {{ url }}{{ page.url }}{{ page.social_thumbnail.url }}
   {% endif %}
 {% endif %}
 {% endcapture %}
@@ -123,7 +123,7 @@
 	<meta name="twitter:creator" content="{{ site.socialmedia.twitter }}">
 	<meta name="twitter:title" content="{{ title }}">
 	<meta name="twitter:description" content="{{ description }}">
-	{% if page.image.title %}<meta name="twitter:image" content="{{ site.urlimg }}{{ page.image.title }}">{% endif %}
+	{% if page.social_thumbnail %}<meta name="twitter:image" content="{{ social_thumbnail }}">{% endif %}
 	{% endif %}
 
 	<link type="text/plain" rel="author" href="{{ url}}/humans.txt">
