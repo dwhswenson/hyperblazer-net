@@ -14,6 +14,17 @@
 {% capture description %}{% if page.meta_description %}{{ page.meta_description }}{% elsif page.teaser %}{{ page.teaser }}{% elsif page.excerpt %}{{ page.excerpt }}{% elsif site.description %}{{ site.description }}{% endif %}{% endcapture %}
 {% assign description = description | strip_html | escape | strip %}
 
+{% capture social_thumbnail %}
+{% if page.social_thumbnail %}
+  {% if page.social_thumbnail.relative_to %}
+  {{ page.social_thumbnail.url | prepend page.social_thumbnail.relative_to }}
+  {% else %}
+  {{ page.social_thumbnail.url }}
+  {% endif %}
+{% endif %}
+{% endcapture %}
+{% assign social_thumbnail = social_thumbnail | strip_html | escape | strip %}
+
 {% capture title %}{% if page.meta_title %}{{ page.meta_title}}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title | strip_html | strip }}{% endif %}{% endcapture %}
 
 {% assign title = title | strip_html | escape | strip_newlines %}
@@ -101,7 +112,7 @@
 	<meta property="og:locale" content="{% if site.og_locale == nil %}en_EN{% else %}{{ site.og_locale }}{% endif %}">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="{{ site.title }}">
-	{% if page.image.title %}<meta property="og:image" content="{{ site.urlimg }}{{ page.image.title }}">{% endif %}
+	{% if page.social_thumbnail %}<meta property="og:image" content="{{ social_thumbnail }}">{% endif %}
 	{% if site.socialmedia.facebook %}<meta property="article:author" content="https://www.facebook.com/{{ site.socialmedia.facebook }}">{% endif %}
 
 
