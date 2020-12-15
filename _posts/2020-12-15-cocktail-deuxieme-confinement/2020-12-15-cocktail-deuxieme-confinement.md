@@ -2,7 +2,7 @@
 categories: ['']
 tags: ['cocktails', 'recipes']
 layout: page
-title: Le Deuxième Confinement: My lockdown cocktail creation
+title: "Le Deuxième Confinement: My lockdown cocktail creation"
 social_thumbnail:
   url: deuxieme-confinement.jpg
   from_root: false
@@ -35,6 +35,8 @@ path with it. Granted, in the world of cocktails, I tend to assume that
 everything can be done has been done, so someone else has probably created
 something similar. Still, now that we're out of lockdown, here's my result, so
 others might enjoy:
+
+![A lovely cocktail](deuxieme-confinement.jpg)
 
 ### Deuxième Confinement 
 
