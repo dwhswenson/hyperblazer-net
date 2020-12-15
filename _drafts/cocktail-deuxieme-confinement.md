@@ -13,7 +13,7 @@ waited for. While I was there, and hearing the employees trying to figure out
 what this lockdown meant for them, I, on a whim, decided that I'd spend the
 lockdown working on a new recipe incorporating: Cherry Heering. (Note: I'm
 fortunate to have a job that the lockdown didn't affect. This is pretty much
-the definition of privilege. I figured the extra money spent was both for my
+the definition of privilege. I figured the extra money I spent was both for my
 own fun and in the hopes that a few extra Euros might be part of keeping people
 employed.)
 
@@ -38,5 +38,5 @@ others might enjoy:
 After washing glass with the absinthe, shake other ingredients over ice and
 serve in cocktail glass.
 
-It's a much happier and sunnier drink that its name and autumnal creation time
+It's a much happier and sunnier drink than its name and autumnal creation time
 would suggest. I hope you can enjoy it any time your spirits could use a boost.
