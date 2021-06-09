@@ -21,7 +21,7 @@ layout: page
 
 <!-- next we find any talks or papers on this topic -->
 
-<h3>Articles and presentations resulting from this work:</h3>
+<h3>Blog posts on this topic:</h3>
 
 {% unless site.categories[page.category].size > 0 %}
 <p>No posts in {{ page.category }} at this time.</p>
@@ -29,10 +29,7 @@ layout: page
 
 <ul>
 {% for post in site.categories[page.category] %}
-    {% if post.tags contains "talk" or post.tags contains "paper"
-                                    or post.tags contains "poster" %}
   <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}
       </a></li>
-    {% endif %}
 {% endfor %}
 </ul>

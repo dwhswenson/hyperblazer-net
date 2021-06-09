@@ -27,6 +27,8 @@
   dropdown:
     - title: "OpenPathSampling"
       url: "/software/openpathsampling/"
+    - title: "Contact Map Explorer"
+      url: "/software/contact-map-explorer/"
     - title: "Miscellaneous"
       url: "/software/misc/"
 
