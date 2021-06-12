@@ -5,10 +5,14 @@ tags: ['paper']
 doi: 10.1063/1.3583366
 journal: JCP
 layout: page
+main-image: byBeta.png
+main-image-alt: "Exact vs. semiclassical current at different temperatures"
 teaser: > 
     Paper introducting my "dynamics of classically mapped fermions", with an
     application to molecular electronics
 ---
+
+![{{ page.main-image-alt }}]({{ page.main-image }}){: .right-image}
 
 Our paper developing a classical mapping for many-fermion systems, which
 takes the most quantum mechanical problem and tries to reframe it in terms

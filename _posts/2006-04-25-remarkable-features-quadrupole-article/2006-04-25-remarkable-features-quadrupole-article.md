@@ -5,10 +5,14 @@ doi: 10.1021/jp0575355
 journal: JPCA
 layout: page
 title: Feature article on quadrupolar interactions
+main-image: jpcafh_big_052506.jpg
+main-image-alt: "Cover: J. Phys. Chem. A"
 teaser: >
     A feature article I wrote, discussing quadrupolar interactions and my work
     on hydrogen and benzene
 ---
+
+![{{ page.main-image-alt }}]({{ page.main-image }}){: .right-image}
 
 Our Feature Article in the Journal of Physical Chemistry A, which discusses
 the nature of quadrupolar interactions generally and specifically includes

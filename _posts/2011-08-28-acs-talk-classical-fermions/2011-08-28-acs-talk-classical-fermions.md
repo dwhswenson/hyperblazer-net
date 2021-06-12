@@ -3,6 +3,7 @@ title: ACS talk on classical fermion mappings
 categories: ['research', 'classical-mappings']
 tags: ['talk', 'video']
 layout: page
+main-image: landauer.png
 teaser: >
   A talk about my DCMF method, presented at the 2011 ACS National Meeting in
   Denver.
