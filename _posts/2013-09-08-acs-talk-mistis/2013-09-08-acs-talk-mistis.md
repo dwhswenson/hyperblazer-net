@@ -3,6 +3,7 @@ categories: ['research', 'mistis']
 tags: ['talk', 'video']
 layout: page
 title: ACS talk on multiple interface set TIS
+main-image: mistis.png
 teaser: >
   A talk I gave at the 2013 Fall National Meeting of the ACS about developments
   in transition interface sampling.

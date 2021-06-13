@@ -3,6 +3,7 @@ categories: ['research', 'scivr']
 tags: ['talk']
 layout: page
 title: ACS talk on the important initial phase space distribution
+main-image: iipsd.png
 teaser: >
   Slides from a talk I gave at the ACS National Meeting, introducing some of my
   work on the "important initial phase space distribution."

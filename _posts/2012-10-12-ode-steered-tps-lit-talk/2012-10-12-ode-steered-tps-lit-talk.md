@@ -2,6 +2,7 @@
 tags: ['talk']
 layout: page
 title: "Literature Talk: 'Ode to Steered Transition Path Sampling'"
+main-image: steered-tps.png
 teaser: >
   A paper I found interesting, presented as a series of limericks.
 ---

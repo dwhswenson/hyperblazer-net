@@ -5,10 +5,14 @@ tags: ['paper']
 doi: 10.1080/00268976.2012.665505
 journal: MolPhys
 layout: page
+main-image: holstein.png
+main-image-alt: "The Holstein Hamiltonian"
 teaser: > 
     The second paper on the DCMF method, this shows that it can work on a more
     complicated model.
 ---
+
+![{{ page.main-image-alt }}]({{ page.main-image }}){: .right-image}
 
 Our paper on applying the classical mapping for fermions to the Holstein
 model, which models vibrational coupling to the system, has been published

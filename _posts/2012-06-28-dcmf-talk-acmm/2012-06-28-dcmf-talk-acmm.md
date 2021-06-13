@@ -3,6 +3,7 @@ title: Invited talk on classical mappings at ACMM symposium
 categories: ['research', 'classical-mappings']
 tags: ['talk']
 layout: page
+main-image: three-systems.png
 teaser: >
   As an invited talk for the Amsterdam Center for Multiscale Modelling, I
   presented my DCMF method to study dynamics of fermions.

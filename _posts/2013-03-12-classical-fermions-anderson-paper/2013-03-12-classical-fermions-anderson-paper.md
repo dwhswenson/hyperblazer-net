@@ -5,10 +5,14 @@ tags: ['paper']
 doi: 10.1063/1.4793747
 journal: JCP
 layout: page
+main-image: anderson.png
+main-image-alt: "The Anderson Hamiltonian"
 teaser: >
   We published a paper comparing my DCMF approach to a new quaterion approach
   for classical mappings of fermion dynamics.
 ---
+
+![{{ page.main-image-alt }}]({{ page.main-image }}){: .right-image}
 
 We've published another paper on the classical mappings for fermions in the
 Journal of Chemical Physics. This one compares the mapping I developed to a
