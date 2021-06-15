@@ -3,6 +3,7 @@ categories: ['research', 'ops']
 tags: ['talk']
 layout: page
 title: Talk about OpenPathSampling at CECAM reaction coordinates workshop
+main-image: ad-tps-channels.png
 teaser: > 
   The generalized ensembles in OPS enable powerful tools for analysis and
   simulation. This talk at a CECAM workshop in Leiden describes some of those
