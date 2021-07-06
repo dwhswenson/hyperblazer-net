@@ -3,6 +3,7 @@ title: "Literature talk: Using the quantum Zeno effect for counterfactual
   communication"
 tags: ['talk']
 layout: page
+main-image: zeno.png
 teaser: >
   The quanum Zeno effect is one of the most fascinating and counter-intuitive
   results of quantum mechanics. In this talk, I present a paper that has used

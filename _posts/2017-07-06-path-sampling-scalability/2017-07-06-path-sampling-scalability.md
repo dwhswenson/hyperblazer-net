@@ -3,6 +3,7 @@ title: Talk on Scalability of Path Sampling Simulations
 categories: ['research', 'path-sampling']
 tags: ['talk']
 layout: page
+main-image: gsk3b.png
 teaser: >
   How does OpenPathSampling's Gromacs engine scale? And how does path sampling
   scale in general? I gave a talk on these topics at a conference on extreme

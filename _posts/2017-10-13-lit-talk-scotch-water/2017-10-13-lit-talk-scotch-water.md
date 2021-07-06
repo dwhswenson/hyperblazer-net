@@ -2,6 +2,7 @@
 title: "Literature talk: Adding water to Scotch whisky"
 tags: ['talk']
 layout: page
+main-image: fav_things.png
 teaser: >
   Two of my favorite things in the world: Molecular dynamics and Scotch whisky.
   How did someone else write this paper before I did?

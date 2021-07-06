@@ -4,6 +4,7 @@ tags: ['paper']
 journal: JCP
 doi: 10.1063/1.5006485
 layout: page
+main-image: fig5.png
 title: Article on effects of isotropic and anisotropic interaction on assembly
   processes
 teaser: > 
@@ -11,6 +12,8 @@ teaser: >
   interactions during simple assembly processes? I explored this in a paper
   with Arthur Newton, Ramses Kools, and Peter Bolhuis.
 ---
+
+![{{ page.main-image-alt }}]({{ page.main-image }}){: .right-image}
 
 Assembly processes, where several subunits join together, are important in many
 areas of chemical physics. For example, during viral replication proteins join
