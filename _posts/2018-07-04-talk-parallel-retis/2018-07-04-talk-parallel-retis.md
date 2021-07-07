@@ -3,6 +3,7 @@ title: Talk about parallelization of RETIS
 categories: ['research', 'ops']
 tags: ['talk']
 layout: page
+main-image: dag.png
 teaser: >
   An invited talk about efforts to parallelize replica exchange transition
   interface sampling in OpenPathSampling.

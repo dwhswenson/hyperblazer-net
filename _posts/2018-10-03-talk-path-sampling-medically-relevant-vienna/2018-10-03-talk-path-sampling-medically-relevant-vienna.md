@@ -4,6 +4,7 @@ title: Talk in Vienna about path sampling of medically relevant biomolecular
 categories: ['research', 'path-sampling']
 tags: ['talk']
 layout: page
+main-image: contents.png
 teaser: >
   I was invited to give a talk at a CECAM workshop on large-scale activated
   event simulations.

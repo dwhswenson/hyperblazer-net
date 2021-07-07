@@ -3,6 +3,7 @@ title: Talk in Genoa about path sampling of medically relevant biomolecules
 categories: ['research', 'path-sampling']
 tags: ['talk']
 layout: page
+main-image: contents.png
 teaser: >
   I was invited to give a talk at a meeting connecting academic computational
   scientists to their industrial counterparts.

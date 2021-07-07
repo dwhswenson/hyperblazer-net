@@ -3,6 +3,7 @@ title: Talk about the LAMMPS engine in OpenPathSampling
 categories: ['research', 'ops']
 tags: ['talk']
 layout: page
+main-image: path_density.png
 teaser: >
   A talk I was invited to give about OpenPathSampling and LAMMPS.
 ---
