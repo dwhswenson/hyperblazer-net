@@ -3,6 +3,7 @@ categories: ['']
 tags: ['cocktails', 'recipes']
 layout: page
 title: "Le Deuxième Confinement: My lockdown cocktail creation"
+main-image: deuxieme-confinement.jpg
 social_thumbnail:
   url: deuxieme-confinement.jpg
   from_root: false
