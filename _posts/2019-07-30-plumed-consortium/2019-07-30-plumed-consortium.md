@@ -5,11 +5,14 @@ journal: Nature Methods
 doi: ['10.1038/s41592-019-0506-8']
 layout: page
 title: PLUMED Consortium article published
+main-image: https://www.plumed-nest.org/nest.png
 teaser: >
   I'm honored to be a co-author of a paper by the PLUMED consortium, focused on
   how to promote transparency and reproducibility in our subdomain of enhanced
   molecular simulations. Here are my thoughts on the paper.
 ---
+
+![{{ page.main-image-alt }}]({{ page.main-image }}){: .right-image}
 
 This paper introduces the PLUMED consortium, an organization focused on helping
 researchers (particularly in the field of rare events/enhanced sampling) to better communicate the protocols used in their simulations, with the aims of making research more reproducible and also easier it easier to adapt those protocols to new projects.
