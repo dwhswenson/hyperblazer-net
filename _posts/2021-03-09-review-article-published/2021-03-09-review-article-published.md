@@ -5,11 +5,14 @@ journal: Adv. Theory and Simul.
 doi: ['https://doi.org/10.1002/adts.202000237']
 layout: page
 title: Review article on transition path sampling published
+main-image: toc_image.png
 teaser: >
   Peter Bolhuis and I have written a review article on transition path
   sampling, focusing on the analogies between sampling in configuration space
   and in trajectory space.
 ---
+
+![{{ page.main-image-alt }}]({{ page.main-image }}){: .right-image}
 
 A review article that Peter Bolhuis and I wrote on transition path sampling has just been published in Advanced Theory and Simulations.
 One of the things we focused on in this article is the fact that a lot of techniques in path sampling are analogous to techniques from configurational sampling.
