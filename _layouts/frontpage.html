@@ -15,7 +15,7 @@ format: frontpage
 * First check, if widget is empty or not by checking if there is a title
 *
 {% endcomment %}
-<div class="row t60">
+<!--<div class="row t60">-->
 	{% if page.widget1.title %}
 		{% include _frontpage-widget.html widget=page.widget1 %}
 	{% endif %}
@@ -29,7 +29,7 @@ format: frontpage
 	{% if page.widget3.title %}
 		{% include _frontpage-widget.html widget=page.widget3 %}
 	{% endif %}
-</div><!-- /.row -->
+<!--</div>[> /.row <]-->
 
 
 
@@ -60,7 +60,7 @@ format: frontpage
 {% endcomment %}
 
     <div class="row t30 b20 homepage">
-        <h3>Welcome to HyperBlazer.net</h3>
+        <h2>Welcome to HyperBlazer.net</h2>
 
         <p>About every 10 years, I redesign the site, whether it needs it or
         not (hint: it needs it). You're looking at a freshly redesigned
