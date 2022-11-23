@@ -38,7 +38,7 @@ author: dwhs
 
 # This URL is the main address for absolute links. Don't include a slash at the end.
 #
-url: 'http://hyperblazer.net'
+url: 'https://hyperblazer.net'
 baseurl: #
 
 # This is for the editing function in _/includes/improve_content
