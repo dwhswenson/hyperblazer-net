@@ -1,11 +1,12 @@
 name: My workflow
+
 on: 
-  - pull_request:
-      branches:
-        - master
-  - schedule:
-    # weekly on Sunday 0900 UTC
-    - cron: "0 9 * * 0"
+  pull_request:
+    branches:
+      - master
+  schedule:
+  # weekly on Sunday 0900 UTC
+  - cron: "0 9 * * 0"
 
 jobs:
   build:
