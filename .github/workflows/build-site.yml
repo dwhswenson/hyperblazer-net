@@ -24,5 +24,16 @@ jobs:
         uses: DigitalSVN/GoStatic@v1.0
         with:
           api-token: ${{ secrets.GOSTATIC_API_TOKEN }}
-          source-dir: './_site'
+          source-dir: "./_site"
+      - name: Output the deployment URL
+        run: echo "URL ${{ steps.deploy.outputs.url }}"
+      #- name: Output the deployment URL in a comment on the pull request
+        #uses: actions/github-script@0.3.0
+        #if: github.event_name == 'pull_request'
+        #with:
+          #github-token: ${{ secrets.GITHUB_TOKEN }}
+          #script: |
+            #const { issue: { number: issue_number }, repo: { owner, repo }  } = context;
+            #github.issues.createComment({ issue_number, owner, repo, body: 'URL ready:  ${{ steps.deploy.outputs.url }}' });
+
 
