@@ -23,6 +23,7 @@ group :jekyll_plugins do
    gem "jekyll-sitemap"
    gem "jekyll-postfiles"
    gem 'jekyll-remote-theme'
+   gem 'jekyll-sass-converter', '~> 2.2'  # pin to avoid warnings
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
