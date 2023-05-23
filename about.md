@@ -41,9 +41,13 @@ Swenson, here are some things you might know me from:
   at the [Universiteit van Amsterdam][uva].
 * During the fall of 2015, I was a visiting post-doc at [Memorial Sloan
   Kettering Cancer Center][mskcc], in New York.
-* Since October 2018, I am a post-doc in the [Centre Blaise
+* From 2018-2021, I was a post-doc in the [Centre Blaise
   Pascal](http://www.cbp.ens-lyon.fr) at the [École Normale Supérieure de
   Lyon](http://www.ens-lyon.fr/)
+* Since January 2022, I am a Senior Software Scientist at the [Open Molecular
+  Software Foundation](https://omsf.io), working as the Infrastructure Lead for
+  [Open Free Energy](https://openfree.energy). Work is 100% remote, and I've
+  chosen to live in Chicago.
 
 If none of that fits the David Swenson you know, then it's probably not me.
 
