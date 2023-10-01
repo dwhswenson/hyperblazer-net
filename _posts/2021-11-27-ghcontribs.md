@@ -1,5 +1,5 @@
 ---
-categories: ['blog', 'i-made-a-thing']
+categories: ['i-made-a-thing', 'ghcontribs']
 layout: page
 title: "ghcontribs: A tool for looking at user contributions to GitHub"
 teaser: >

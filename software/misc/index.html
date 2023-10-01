@@ -1,0 +1,61 @@
+---
+title: Miscellaneous Software
+layout: page
+---
+
+<p>Here's information about various other software packages I've
+developed. These are mostly small tools that scratched a specific itch I had
+at the time. I've split these into "maintained" software and "unmaintained"
+software. "Maintained" here means that these tools are still part of my
+regular workflow, and I'll make a best effort to fix any issues that come up
+for those. "Unmaintained" tools are more a curiosity for anyone who wants to
+play with similar ideas.</p>
+
+<p>Note that even the "maintained" packages tend not to have the quality of
+documentation or test suite that I provide with my main software
+projects.</p>
+
+{% assign maintained = site.miscsoftware | where: "maintained", true  %}
+{% assign unmaintained = site.miscsoftware | where: "maintained", false  %}
+<div>
+<ul>
+  <li><a href="#maintained">Maintained software</a></li>
+  <ul>
+    {% for package in maintained %}
+    <li><a href="#{{ package.name }}">{{ package.name }}</a></li>
+    {% endfor %}
+  </ul>
+  <li><a href="#unmaintained">Unmaintained software</a></li>
+  <ul>
+    {% for package in unmaintained %}
+    <li><a href="#{{ package.name }}">{{ package.name }}</a></li>
+    {% endfor %}
+  </ul>
+</ul>
+</div>
+
+<hr />
+
+<a name="maintained"></a>
+<h2>Maintained software</h2>
+<table class="software-list">
+{% for package in maintained %}
+<!-- TODO: isn't there a way to get this alternating look from li instead of
+     tr? -->
+<tr><td>
+  {% include miscsw package=package %}
+</td></tr>
+{% endfor %}
+</table>
+
+<hr />
+
+<a name="unmaintained"></a>
+<h2>Unmaintained software</h2>
+<table class="software-list">
+{% for package in unmaintained %}
+<tr><td>
+  {% include miscsw package=package %}
+</td></tr>
+{% endfor %}
+</table>

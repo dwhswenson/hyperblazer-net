@@ -1,5 +1,5 @@
 ---
-categories: ['blog', 'i-made-a-thing']
+categories: ['i-made-a-thing', 'ticgithub']
 layout: page
 title: "ticgithub: A GitHub-based email ticketing system"
 teaser: >
