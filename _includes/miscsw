@@ -1,0 +1,41 @@
+<!-- TODO: this should be moved to an _includes -->
+{% assign package = include.package %}
+<a name="{{ package.name }}"></a>
+<div>
+  <h3>{{ package.name }}</h3>
+  <p>{{ package.desc | markdownify }}</p>
+  <table class="misc-software">
+  <tr>
+    <td>Source:</td>
+    <td class="github-link">
+      <a href="https://github.com/{{ package.github }}">
+          https://github.com/{{ package.github }}
+      </a>
+    </td>
+  </tr>
+  {% if package.docs %}
+  <tr>
+    <td>Docs:</td>
+    <td class="docs-link">
+      <a href="{{ package.docs }}">Documentation</a>
+    </td>
+  </tr>
+  {% endif %}
+  {% if site.categories[package.tag].size > 0 %}
+  <tr>
+  <td>Posts:</td>
+  <td>
+  <ul>
+    {% for post in site.categories[package.tag] %}
+    <li><a href="{{ post.url | prepend: site.baseurl }}">
+      {{ post.title }}
+    </a></li>
+    {% endfor %}
+  </ul>
+  </td>
+  </tr>
+  {% endif %}
+  </table>
+</div>  <!-- misc-software -->
+
+
