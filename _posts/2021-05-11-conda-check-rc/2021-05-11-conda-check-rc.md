@@ -1,5 +1,5 @@
 ---
-categories: ['misc-software', 'conda-check-rc']
+categories: ['i-made-a-thing', 'conda-rc-check']
 layout: page
 title: A GitHub action to check for release candidates on conda
 teaser: >

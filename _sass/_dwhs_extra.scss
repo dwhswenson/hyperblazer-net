@@ -81,3 +81,23 @@ pre.highlight {
 h2 {
 	margin-top: 0px
 }
+
+table ul {
+    font-size: .875rem;  /* override ul outside table */
+}
+
+/* override alternating within misc-software links */
+table.misc-software tr:nth-of-type(even) {
+    background: inherit;
+}
+
+table.misc-software {
+    width: 100%;
+    border-style: none;
+    background-color: inherit;
+}
+
+table.software-list {
+    border-style: none;
+    width: 100%;
+}
