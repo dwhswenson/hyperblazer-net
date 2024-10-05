@@ -26,7 +26,7 @@ jobs:
           echo $GITHUB_REF
           if [ $GITHUB_EVENT_NAME = "pull_request" }} ]; then
             RUNTYPE="staging"
-          elif [ $GITHUB_EVENT_NAME = "push" && $GITHUB_REF = "refs/heads/master"; then
+          elif [ $GITHUB_EVENT_NAME = "push" && $GITHUB_REF = "refs/heads/master" ]; then
             RUNTYPE="production"
           else
             echo "Invalid run"
