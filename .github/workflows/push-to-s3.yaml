@@ -16,19 +16,45 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - name: Config
+        id: config
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          echo $GITHUB_EVENT_NAME
+          echo $GITHUB_REF
+          if [ $GITHUB_EVENT_NAME = "pull_request" }} ]; then
+            RUNTYPE="staging"
+          elif [ $GITHUB_EVENT_NAME = "push" && $GITHUB_REF = "refs/heads/master"; then
+            RUNTYPE="production"
+          else
+            echo "Invalid run"
+            exit 1
+          fi
+          echo $RUNTYPE
+          eval "echo \"$(cat _devtools/$RUNTYPE.sh)\"" > _local_envs.sh
+          echo "Setting local variables:"
+          cat _local_envs.sh
+          cat _local_envs.sh >> $GITHUB_OUTPUT
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: us-east-2
-          role-to-assume: arn:aws:iam::730335208220:role/hb-net-bucket-and-role-WorkflowRole-6LcFv4gsMqB7
+          role-to-assume: ${{ steps.config.outputs.ROLE }}
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0.0 # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
       - name: Build the site
         run: bundle exec jekyll build
       # TODO: linkcheck, aspell
-      - name: List s3 (test)
-        run: aws s3 ls s3://hb-net-testbucket-186/
       - name: Upload to S3
-        run: aws s3 cp ./_site/ s3://hb-net-testbucket-186/ --recursive
+        env:
+          BUCKET_NAME: ${{ steps.config.outputs.BUCKETNAME }}
+          PREFIX: ${{ steps.config.outputs.PREFIX }}
+        # TODO: this should be a much fancier sync here; if we're doing
+        # staging, we should start by copying from existing bucket; either
+        # case, we should probably sync using s3cmd sync
+        run: 
+          aws s3 cp ./_site/ s3://$BUCKET_NAME/$PREFIX/ --recursive
