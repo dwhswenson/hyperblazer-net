@@ -33,6 +33,7 @@ jobs:
             exit 1
           fi
           echo $RUNTYPE
+          unset PR_NUMBER  # testing
           eval "echo \"$(cat _devtools/$RUNTYPE.sh)\"" > _local_envs.sh
           echo "Setting local variables:"
           cat _local_envs.sh
