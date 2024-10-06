@@ -60,7 +60,7 @@ jobs:
         # TODO: this should be a much fancier sync here; if we're doing
         # staging, we should start by copying from existing bucket; either
         # case, we should probably sync using s3cmd sync
-        run: 
+        run: |
           if [ -n "$PREFIX" ]; then
              BUCKET_AND_PREFIX="$BUCKET_NAME/$PREFIX"
           else
