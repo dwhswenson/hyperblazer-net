@@ -66,4 +66,5 @@ jobs:
           else
              BUCKET_AND_PREFIX=$BUCKET_NAME
           fi
-          aws s3 cp ./_site/ s3://$BUCKET_AND_PREFIX/ --recursive
+          echo $BUCKET_AND_PREFIX
+          aws s3 cp ./_site/ s3://${BUCKET_AND_PREFIX}/ --recursive
