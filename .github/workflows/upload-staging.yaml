@@ -23,7 +23,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          run-id: ${{ github.event.workflow_run.id }}
+          run-id: ${{ github.event.workflow_run.id || github.run_id }}
           name: "site-build"
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Configure AWS
