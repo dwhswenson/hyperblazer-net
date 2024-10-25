@@ -1,23 +1,32 @@
-name: Test Site Build
+name: Build from PR
 
 on: 
   pull_request:
     branches:
       - master
-  schedule:
-  # weekly on Sunday 0900 UTC
-  - cron: "0 9 * * 0"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0.0 # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Build the site
         run: bundle exec jekyll build
-# sadly, this site is far too large for GoStatic
-
+      # TODO: linkcheck, etc.
+      - name: Make artifact
+        run: tar czf site.tgz _site
+      - name: Upload artifact
+        # TODO: do not do this on scheduled runs
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: site.tgz
+          if-no-files-found: error
+  #stage:  # temp: with workflow call to stage the site
+    #needs: build
+    #uses: ./.github/workflows/upload-staging.yaml
+    #secrets: inherit
