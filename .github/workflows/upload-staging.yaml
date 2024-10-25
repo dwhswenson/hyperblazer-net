@@ -11,6 +11,7 @@ on:
     workflows: ["Test Site Build"]
     types:
       - completed
+  workflow_call:  # temp; remove when done
 
 jobs:
   stage-from-artifact:
