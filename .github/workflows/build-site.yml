@@ -1,13 +1,9 @@
-name: Test Site Build
+name: Build from PR
 
 on: 
   pull_request:
     branches:
       - master
-  workflow_dispatch:
-  #schedule:
-    ## weekly on Sunday 0900 UTC
-    #- cron: "0 9 * * 0"
 
 jobs:
   build:
@@ -30,7 +26,7 @@ jobs:
           name: site-build
           path: site.tgz
           if-no-files-found: error
-  stage:  # temp: with workflow call to stage the site
-    needs: build
-    uses: ./.github/workflows/upload-staging.yaml
-    secrets: inherit
+  #stage:  # temp: with workflow call to stage the site
+    #needs: build
+    #uses: ./.github/workflows/upload-staging.yaml
+    #secrets: inherit

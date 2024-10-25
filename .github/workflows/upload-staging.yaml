@@ -8,10 +8,10 @@ name: Upload to staging
 
 on:
   workflow_run:
-    workflows: ["Test Site Build"]
+    workflows: ["Build from PR"]
     types:
       - completed
-  workflow_call:  # temp; remove when done
+  #workflow_call:  # for debugging
 
 jobs:
   stage-from-artifact:
