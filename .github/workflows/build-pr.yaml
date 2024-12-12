@@ -8,4 +8,4 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    uses: build-site.yaml
+    uses: ./.github/workflows/build-site.yaml
