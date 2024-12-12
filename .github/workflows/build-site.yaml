@@ -1,9 +1,4 @@
-name: Build from PR
-
-on: 
-  pull_request:
-    branches:
-      - master
+name: Build site
 
 jobs:
   build:
@@ -26,7 +21,7 @@ jobs:
           name: site-build
           path: site.tgz
           if-no-files-found: error
-  #stage:  # temp: with workflow call to stage the site
+  #stage:  # debug: with workflow call to stage the site
     #needs: build
     #uses: ./.github/workflows/upload-staging.yaml
     #secrets: inherit
