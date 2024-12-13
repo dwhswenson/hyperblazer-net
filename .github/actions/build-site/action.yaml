@@ -1,0 +1,31 @@
+name: Build site
+description: Build the site and upload it as an artifact
+
+inputs:
+  site_dir:
+    description: The directory to build the site in
+    required: false
+    default: _site
+
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0.0 # Not needed with a .ruby-version file
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: Build the site
+      shell: bash
+      run: bundle exec jekyll build
+    # TODO: linkcheck, etc.
+    - name: Make artifact
+      shell: bash
+      run: tar czf site.tgz ${{ inputs.site_dir }}
+    - name: Upload artifact
+      # TODO: do not do this on scheduled runs
+      uses: actions/upload-artifact@v4
+      with:
+        name: site-build
+        path: site.tgz
+        if-no-files-found: error
