@@ -15,6 +15,7 @@ runs:
       with:
         ruby-version: 3.0.0 # Not needed with a .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
     - name: Build the site
       shell: bash
       run: bundle exec jekyll build
@@ -28,5 +29,19 @@ runs:
       with:
         name: site-build
         path: site.tgz
+        if-no-files-found: error
+        retention-days: 1
+
+    - name: Store GitHub Metadata (PR only)
+      if: ${{ github.event_name == 'pull_request' }}
+      shell: bash
+      run: |
+        echo '{"pr": ${{ github.event.pull_request.number }}, "sha": "$GITHUB_HEAD_REF"}' > metadata.json
+    - name: Upload Metadata (PR only)
+      if: ${{ github.event_name == 'pull_request' }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: metadata
+        path: metadata.json
         if-no-files-found: error
         retention-days: 1
