@@ -33,6 +33,11 @@ jobs:
         run: |
           echo "PR_NUM=$(jq -r .pr metadata.json)" >> $GITHUB_ENV
           echo "PR_HEADSHA=$(jq -r .sha metadata.json)" >> $GITHUB_ENV
+
+      - name: State metadata
+        run: |
+          echo "PR_NUM=$PR_NUM"
+          echo "PR_HEADSHA=$PR_HEADSHA"
         
       - uses: myrotvorets/set-commit-status-action@v2.0.1
         with:
