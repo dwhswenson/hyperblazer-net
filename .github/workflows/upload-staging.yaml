@@ -26,6 +26,8 @@ jobs:
         with:
           run-id: ${{ github.event.workflow_run.id }}
           name: "metadata"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Get metadata
         id: get-metadata
         run: |
