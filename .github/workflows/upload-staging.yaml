@@ -66,10 +66,11 @@ jobs:
         # 1. Use `aws s3 sync` to copy existing production files to staging
         # 2. Use `s3cmd sync`, which checks by md5, to update changed files
         run: |
-          aws s3 sync s3://{{ secrets.PROD_BUCKET }}/* s3://{{ secrets.STAGING_BUCKET }}/$PR_NUM/
+          TARGET="s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/"
+          echo "Copying current content to $TARGET"
+          aws s3 sync s3://${{ secrets.PROD_BUCKET }}/* $TARGET
           tar -xvf site.tgz
-          TARGET = s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/
-          echo "Syncing to $TARGET"
+          echo "Updating $TARGET"
           s3cmd sync ./_site/ $TARGET
 
       - uses: myrotvorets/set-commit-status-action@v2.0.1
