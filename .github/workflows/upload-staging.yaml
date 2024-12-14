@@ -15,18 +15,28 @@ on:
 
 jobs:
   stage-from-artifact:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
-      checks: write
+      statuses: write
     steps:
-      - uses: LouisBrunner/checks-action@v2.0.0
+      - name: Download metadata
+        uses: actions/download-artifact@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          name: Upload to staging
-          status: in_progress
+          name: "metadata"
+      - name: Get metadata
+        id: get-metadata
+        run: |
+          echo "PR_NUM=$(jq -r .pr metadata.json)" >> $GITHUB_ENV
+          echo "PR_HEADSHA=$(jq -r .sha metadata.json)" >> $GITHUB_ENV
+        
+      - uses: myrotvorets/set-commit-status-action@v2.0.1
+        with:
+          status: pending
+          sha: ${{ env.PR_HEADSHA }}
+          context: 'Upload to staging'
+
       - name: Install s3cmd
         run: |
           python -m pip install s3cmd
@@ -36,27 +46,33 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           name: "site-build"
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: us-east-2
           role-to-assume: ${{ secrets.STAGING_ROLE }}
+
       - name: Extract artifact and sync with s3
-        env:
-          PR_REF: ${{ github.event.workflow_run.number }}
         # 1. Use `aws s3 sync` to copy existing production files to staging
         # 2. Use `s3cmd sync`, which checks by md5, to update changed files
         run: |
-          echo "PR_REF=$PR_REF"
-          PR_NUM=$(echo $PR_REF | cut -d'/' -f 3)
-          echo "PR=$PR_NUM"
           aws s3 sync s3://{{ secrets.PROD_BUCKET }}/* s3://{{ secrets.STAGING_BUCKET }}/$PR_NUM/
           tar -xvf site.tgz
-          s3cmd sync ./_site/ s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/
-      # TODO: possible comment with link (if comment hasn't already been made?)
-      - uses: LouisBrunner/checks-action@v2.0.0
+          TARGET = s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/
+          echo "Syncing to $TARGET"
+          s3cmd sync ./_site/ $TARGET
+      - uses: myrotvorets/set-commit-status-action@v2.0.1
+        if: ${{ always() }}
+        env:
+          DEPLOY_SUCCESS: Successfully staged preview.
+          DEPLOY_FAILURE: Failed to stage preview.
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: Upload to staging
-          status: completed
-          conclusion: success
+          status: ${{ job.status == 'success' && 'success' || 'failure' }}
+          sha: ${{ env.PR_HEADSHA }}
+          context: 'Upload to staging'
+          description: ${{ job.status == 'success' && env.DEPLOY_SUCCESS || env.DEPLOY_FAILURE }}
+
+      # TODO: possible comment with link (if comment hasn't already been made?)
+      # see marocchino/sticky-pull-request-comment
