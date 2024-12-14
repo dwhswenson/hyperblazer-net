@@ -12,6 +12,11 @@ jobs:
       - name: Install s3cmd
         run: |
           python -m pip install s3cmd
+      - name: Configure AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-2
+          role-to-assume: ${{ secrets.STAGING_ROLE }}
       - name: Delete contents of PR folder in staging bucket
         run: |
           PR_NUM=$(echo ${{ github.event.pull_request.head.ref }} | cut -d'/' -f 3)
