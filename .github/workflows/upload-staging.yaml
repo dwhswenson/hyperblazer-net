@@ -21,6 +21,11 @@ jobs:
       id-token: write
       contents: read
     steps:
+      - uses: LouisBrunner/checks-action@v2.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Upload to staging
+          status: in_progress
       - name: Install s3cmd
         run: |
           python -m pip install s3cmd
@@ -48,6 +53,12 @@ jobs:
           tar -xvf site.tgz
           s3cmd sync ./_site/ s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/
       # TODO: possible comment with link (if comment hasn't already been made?)
+      - uses: LouisBrunner/checks-action@v2.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: Upload to staging
+          status: completed
+          conclusion: success
 
   cleanup-artifact:
     if: ${{ always() }}
