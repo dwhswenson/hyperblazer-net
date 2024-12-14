@@ -20,6 +20,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      pull-requests: write
     steps:
       - uses: LouisBrunner/checks-action@v2.0.0
         with:
