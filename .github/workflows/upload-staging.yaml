@@ -32,7 +32,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          run-id: ${{ github.event.workflow_run.id || github.run_id }}
+          run-id: ${{ github.event.workflow_run.id }}
           name: "site-build"
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Configure AWS
@@ -65,7 +65,8 @@ jobs:
     needs: stage-from-artifact
     runs-on: ubuntu-latest
     steps:
-      - uses: geekyeggo/delete-artifact@v5
+      - uses: philips-labs/action-delete-artifact@v1.0.0
         with:
+          workflow: ${{ github.event.workflow_run.id }}
           name: "site-build"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          workflow_conclusion: "success"
