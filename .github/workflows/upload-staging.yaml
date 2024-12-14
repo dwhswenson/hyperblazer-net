@@ -39,6 +39,7 @@ jobs:
           status: pending
           sha: ${{ env.PR_HEADSHA }}
           context: 'Upload to staging'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install s3cmd
         run: |
@@ -65,6 +66,7 @@ jobs:
           TARGET = s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/
           echo "Syncing to $TARGET"
           s3cmd sync ./_site/ $TARGET
+
       - uses: myrotvorets/set-commit-status-action@v2.0.1
         if: ${{ always() }}
         env:
