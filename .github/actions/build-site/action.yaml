@@ -35,8 +35,10 @@ runs:
     - name: Store GitHub Metadata (PR only)
       if: ${{ github.event_name == 'pull_request' }}
       shell: bash
+      env:
+        GITHUB_HEAD_REF: ${{ github.head_ref }}
       run: |
-        echo '{"pr": ${{ github.event.pull_request.number }}, "sha": "$GITHUB_HEAD_REF"}' > metadata.json
+        echo '{"pr": ${{ github.event.pull_request.number }}, "sha": "${{ github.event.pull_request.head.sha }}"}' > metadata.json
     - name: Upload Metadata (PR only)
       if: ${{ github.event_name == 'pull_request' }}
       uses: actions/upload-artifact@v4
