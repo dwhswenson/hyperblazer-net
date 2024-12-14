@@ -39,7 +39,7 @@ jobs:
 
   cleanup-artifact:
     if: ${{ always() }}
-    needs: stage-from-artifact
+    needs: deploy-from-artifact
     runs-on: ubuntu-latest
     steps:
       - uses: philips-labs/action-delete-artifact@v1.0.0
