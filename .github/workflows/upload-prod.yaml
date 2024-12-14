@@ -5,6 +5,8 @@ on:
     workflows: ["Build from push"]
     types:
       - completed
+    branches:
+      - master
 
 jobs:
   stage-from-artifact:
