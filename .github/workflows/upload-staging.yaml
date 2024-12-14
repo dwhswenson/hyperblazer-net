@@ -59,14 +59,3 @@ jobs:
           name: Upload to staging
           status: completed
           conclusion: success
-
-  cleanup-artifact:
-    if: ${{ always() }}
-    needs: stage-from-artifact
-    runs-on: ubuntu-latest
-    steps:
-      - uses: philips-labs/action-delete-artifacts@v1.0.0
-        with:
-          run_id: ${{ github.event.workflow_run.id }}
-          name: "site-build"
-          workflow_conclusion: "success"

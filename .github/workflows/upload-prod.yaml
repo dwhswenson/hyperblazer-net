@@ -36,14 +36,3 @@ jobs:
         run: |
           tar -xvf site.tgz
           s3cmd sync ./_site/ s3://${{ secrets.PROD_BUCKET }}/
-
-  cleanup-artifact:
-    if: ${{ always() }}
-    needs: deploy-from-artifact
-    runs-on: ubuntu-latest
-    steps:
-      - uses: philips-labs/action-delete-artifacts@v1.0.0
-        with:
-          run_id: ${{ github.event.workflow_run.id }}
-          name: "site-build"
-          workflow_conclusion: "success"
