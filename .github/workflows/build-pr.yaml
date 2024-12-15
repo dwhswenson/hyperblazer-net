@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/build-site
         with:
-          site_url: staging.hb.dwhswenson.net
-          base_url: ${{ github.event.pull_request.number }}
+          site_url: "https://staging.hb.dwhswenson.net"
+          base_url: "${{ github.event.pull_request.number }}"

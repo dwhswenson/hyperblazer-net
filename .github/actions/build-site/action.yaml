@@ -32,8 +32,9 @@ runs:
           echo "url: ${{ inputs.site_url }}" >> _extra_config.yml
         fi
         if [ "${{ inputs.base_url }}" != "" ]; then
-          echo "baseurl: ${{ inputs.base_url }}" >> _extra_config.yml
+          echo "baseurl: /${{ inputs.base_url }}" >> _extra_config.yml
         fi
+        cat _extra_config.yml
     - name: Build the site
       shell: bash
       run: bundle exec jekyll build --config "_config.yml,_extra_config.yml"
