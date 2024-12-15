@@ -6,6 +6,14 @@ inputs:
     description: The directory to build the site in
     required: false
     default: _site
+  site_url:
+    description: The URL to the site
+    required: false
+    default: ""
+  base_url:
+    description: The base URL for the site
+    required: false
+    default: ""
 
 
 runs:
@@ -16,9 +24,19 @@ runs:
         ruby-version: 3.0.0 # Not needed with a .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
+    - name: Create jekyll config
+      shell: bash
+      run: |
+        echo "" > _extra_config.yml
+        if [ "${{ inputs.site_url }}" != "" ]; then
+          echo "url: ${{ inputs.site_url }}" >> _extra_config.yml
+        fi
+        if [ "${{ inputs.base_url }}" != "" ]; then
+          echo "baseurl: ${{ inputs.base_url }}" >> _extra_config.yml
+        fi
     - name: Build the site
       shell: bash
-      run: bundle exec jekyll build
+      run: bundle exec jekyll build --config "_config.yml,_extra_config.yml"
     # TODO: linkcheck, etc.
     - name: Make artifact
       shell: bash
