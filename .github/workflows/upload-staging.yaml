@@ -73,6 +73,15 @@ jobs:
           echo "Updating $TARGET"
           s3cmd sync ./_site/ $TARGET
 
+      - name: Clean up CSS content type metadata
+        run: |
+          aws s3 cp s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/assets/ s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/assets/ --recursive --exclude "*" --include "*.css" --metadata-directive REPLACE --content-type "text/css"
+
+      - name: Perform cache invalidation
+        run: |
+          echo "Invalidating staging cache"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.STAGING_CLOUDFRONT }} --paths "/*"
+
       - uses: myrotvorets/set-commit-status-action@v2.0.1
         if: ${{ always() }}
         env:
