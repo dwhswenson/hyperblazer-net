@@ -36,3 +36,13 @@ jobs:
         run: |
           tar -xvf site.tgz
           s3cmd sync ./_site/ s3://${{ secrets.PROD_BUCKET }}/
+      - name: Clean up CSS content type metadata
+        run: |
+          aws s3 cp s3://${{ secrets.PROD_BUCKET }}/assets/ s3://${{ secrets.PROD_BUCKET }}/assets/ --recursive --exclude "*" --include "*.css" --metadata-directive REPLACE --content-type "text/css"
+
+      - name: Perform cache invalidation
+        run: |
+          echo "Invalidating staging cache"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.PROD_CLOUDFRONT }} --paths "/*"
+
+
