@@ -1,0 +1,39 @@
+on:
+  workflow_run:
+    workflows: ["Upload to staging"]
+    types:
+      - completed
+
+jobs:
+  post-comment:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Download metadata
+        uses: actions/download-artifact@v2
+        with:
+          # will this work?
+          run-id: ${{ github.event.workflow_run.workflow_run.id }}
+          name: "metadata"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get metadata
+        id: get-metadata
+        run: |
+          echo "PR_NUM=$(jq -r .pr metadata.json)" >> $GITHUB_ENV
+          echo "PR_HEADSHA=$(jq -r .sha metadata.json)" >> $GITHUB_ENV
+
+      - name: State metadata
+        run: |
+          echo "PR_NUM=$PR_NUM"
+          echo "PR_HEADSHA=$PR_HEADSHA"
+
+      - name: Post comment with metadata
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: |
+            This PR has been staged at ${{ secrets.STAGING_URL }}.
+
+            Updated for commit ${{ env.PR_HEADSHA }}.
+
