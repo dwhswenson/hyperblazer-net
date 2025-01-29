@@ -62,13 +62,17 @@ jobs:
           aws-region: us-east-2
           role-to-assume: ${{ secrets.STAGING_ROLE }}
 
-      - name: Extract artifact and sync with s3
-        # 1. Use `aws s3 sync` to copy existing production files to staging
-        # 2. Use `s3cmd sync`, which checks by md5, to update changed files
+      # 1. Use `aws s3 sync` to copy existing production files to staging
+      # 2. Use `s3cmd sync`, which checks by md5, to update changed files
+      - name: Copy existing content to staging
         run: |
           TARGET="s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/"
+          echo "TARGET=$TARGET" >> $GITHUB_ENV
           echo "Copying current content to $TARGET"
           aws s3 sync s3://${{ secrets.PROD_BUCKET }}/* $TARGET
+
+      - name: Extract artifact and sync with s3
+        run: |
           tar -xvf site.tgz
           echo "Updating $TARGET"
           s3cmd sync ./_site/ $TARGET
