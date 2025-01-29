@@ -21,7 +21,7 @@ jobs:
           role-to-assume: ${{ secrets.STAGING_ROLE }}
       - name: Delete contents of PR folder in staging bucket
         run: |
-          PR_NUM=$(echo ${{ github.event.pull_request.head.ref }} | cut -d'/' -f 3)
+          echo "Possibly: ${{ github.event.pull_request.number }}"
+          PR_NUM=$(echo $GITHUB_REF | awk -F / '{print $3}')
           echo "PR=$PR_NUM"
           s3cmd del --recursive s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/
-
