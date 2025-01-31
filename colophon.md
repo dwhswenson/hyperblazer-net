@@ -35,8 +35,8 @@ to comment on them), which I like. It is also designed to maximize security.
 Even if you have the ssh key for my website, the only thing you could do
 would be to force deployment of the master branch of the GitHub repository.
 
-[GitHub]: http://github.com/dswenson/hyperblazer-net/
-[BlueHost]: http://bluehost.com
+[GitHub]: https://github.com/dwhswenson/hyperblazer-net/
+[BlueHost]: https://www.bluehost.com
 
 ## <a name="custom-theme"></a>Theme customizations
 

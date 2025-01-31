@@ -66,6 +66,7 @@ jobs:
       # 2. Use `s3cmd sync`, which checks by md5, to update changed files
       - name: Copy existing content to staging
         run: |
+          date  # DEBUG
           TARGET="s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/"
           echo "TARGET=$TARGET" >> $GITHUB_ENV
           echo "Copying current content to $TARGET"
@@ -73,7 +74,9 @@ jobs:
 
       - name: Extract artifact and sync with s3
         run: |
+          date  # DEBUG
           tar -xvf site.tgz
+          date  # DEBUG
           echo "Updating $TARGET"
           s3cmd sync ./_site/ $TARGET
 

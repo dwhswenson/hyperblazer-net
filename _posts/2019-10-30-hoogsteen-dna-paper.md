@@ -2,7 +2,7 @@
 categories: ['research', 'dna-baserolling']
 tags: ['paper']
 journal: NAR
-doi: ['https://doi.org/10.1093/nar/gkz837']
+doi: '10.1093/nar/gkz837'
 layout: page
 title: Article on Watson-Crick to Hoogsteen transition in DNA published
 teaser: >

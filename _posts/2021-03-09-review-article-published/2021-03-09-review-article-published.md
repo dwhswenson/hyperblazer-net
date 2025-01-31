@@ -2,7 +2,7 @@
 categories: ['research', 'pathsampling']
 tags: ['paper']
 journal: Adv. Theory and Simul.
-doi: ['https://doi.org/10.1002/adts.202000237']
+doi: '10.1002/adts.202000237'
 layout: page
 title: Review article on transition path sampling published
 main-image: toc_image.png
