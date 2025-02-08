@@ -89,6 +89,14 @@ jobs:
           echo "Invalidating staging cache"
           aws cloudfront create-invalidation --distribution-id ${{ secrets.STAGING_CLOUDFRONT }} --paths "/*"
 
+      - name: Reupload metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: metadata
+          path: metadata.json
+          if-no-files-found: error
+          retention-days: 1
+
       - uses: myrotvorets/set-commit-status-action@v2.0.1
         if: ${{ always() }}
         env:
