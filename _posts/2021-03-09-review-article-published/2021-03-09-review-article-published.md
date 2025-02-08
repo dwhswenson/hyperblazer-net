@@ -20,4 +20,4 @@ Indeed, the original idea of transition path sampling took the well-known idea o
 This has always been one of my favorite aspects of TPS, so it was a lot of fun to contribute to a review that emphasized that point.
 As part of the special issue "Molecular Simulation for the Next Decade," the article also discusses some of the developments in path sampling software that I've been particularly involved with.
 
-[Peter G. Bolhuis and David W.H. Swenson. "Transition Path Sampling as Markov Chain Monte Carlo of Trajectories: Recent Algorithms, Software, Applications, and Future Outlook." Adv. Theory and Simul. **4** 2000237 (2021).](http://doi.org/{{ page.doi }})
+[Peter G. Bolhuis and David W.H. Swenson. "Transition Path Sampling as Markov Chain Monte Carlo of Trajectories: Recent Algorithms, Software, Applications, and Future Outlook." Adv. Theory and Simul. **4** 2000237 (2021).](https://doi.org/{{ page.doi }})

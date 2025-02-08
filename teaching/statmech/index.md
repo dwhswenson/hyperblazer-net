@@ -11,7 +11,7 @@ an effort to contribute a little extra by TeX'ing up the solutions, with
 explanations, to many of the problems. I've uploaded them here.
 
 [imsm]: https://www.amazon.com/Introduction-Modern-Statistical-Mechanics-Chandler/dp/0195042778/
-[chandler]: http://gold.cchem.berkeley.edu/David/
+[chandler]: https://en.wikipedia.org/wiki/David_Chandler_(chemist)
 
 {:pdflink: data-fancybox=""}
 

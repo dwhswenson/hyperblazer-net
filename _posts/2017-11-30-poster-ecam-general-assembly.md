@@ -9,7 +9,7 @@ teaser: >
   project.
 ---
 
-I presented a poster on my work for [E-CAM](http://e-cam2020.eu) at the E-CAM
+I presented a poster on my work for [E-CAM](https://www.e-cam2020.eu) at the E-CAM
 General Assembly, held in Barcelona. It includes an introduction to
 OpenPathSampling, as well as several other activities I was engaged in as part
 of the E-CAM project.

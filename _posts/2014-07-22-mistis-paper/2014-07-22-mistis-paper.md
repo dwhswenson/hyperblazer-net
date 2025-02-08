@@ -23,4 +23,4 @@ model that shows how seemingly independent rare events can be correlated.
 [David W.H. Swenson and Peter G. Bolhuis. "A replica exchange transition
 interface sampling method with multiple interface sets for investigating
 networks of rare events." J. Chem. Phys. **141**, 044101
-(2014)](http://doi.org//{{ page.doi }})
+(2014)](https://doi.org//{{ page.doi }})

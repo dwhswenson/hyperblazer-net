@@ -26,7 +26,8 @@ Swenson, here are some things you might know me from:
   time I also did some research at [University of Oregon][oregon], spent a
   semester in [Avignon, France][avignon], and spent a summer doing research
   at [Université Bordeaux I][bordeaux].
-* From 2003 to 2005 I was a student at [Université Louis Pasteur][ulp], in
+* From 2003 to 2005 I was a student at Université Louis Pasteur (now part of
+  the combined [Université de Strasbourg][unistra]), in
   Strasbourg, France. I spent summers in Indianapolis (where my parents
   live) doing research. During the 2003-2004 academic year, I was an English
   Teaching Assistant at [Lycée Le Corbusier][lecorbu], in Illkirch, France.
@@ -59,13 +60,13 @@ If none of that fits the David Swenson you know, then it's probably not me.
 [cc]: http://www.coloradocollege.edu
 [oregon]: http://www.uoregon.edu
 [avignon]: http://www.iaufrance.org
-[bordeaux]: http://www.u-bordeaux1.fr
-[ulp]: http://www-ulp.u-strasbg.fr
+[bordeaux]: http://www.u-bordeaux.fr
+[unistra]: https://www.unistra.fr
 [lecorbu]: http://www.lyceelecorbusier.com
 [berkeley]: http://chemistry.berkeley.edu
 [desres]: http://www.deshawresearch.com
 [telaviv]: http://www.tau.ac.il
-[molsim]: http://molsim.chem.uva.nl
-[hims]: http://www.science.uva.nl/hims
+[molsim]: https://www.compchem.nl
+[hims]: https://hims.uva.nl
 [uva]: http://www.uva.nl
 [mskcc]: http://www.mskcc.org

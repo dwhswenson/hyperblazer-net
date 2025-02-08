@@ -14,7 +14,7 @@ This allows packages to automatically test against release candidates of depende
 ### Motivation
 
 Open source software often builds on other open source software.
-In the specific case of [OpenPathSampling](http://openpathsampling.org), we depend on heavily other tools such as [OpenMM](http://openmm.org) to handle important and complex tasks such as running the underlying dynamics.
+In the specific case of [OpenPathSampling](http://openpathsampling.org), we depend on heavily other tools such as [OpenMM](https://openmm.org) to handle important and complex tasks such as running the underlying dynamics.
 Because we know that our integration with these tools is extremely important, we have extensive tests to ensure that we still integrate properly with these tools.
 Those tests are run every night, so we are immediately alerted if a new release breaks something for our users.
 
