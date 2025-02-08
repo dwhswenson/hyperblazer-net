@@ -18,7 +18,7 @@ jobs:
           # will this work?
           run-id: ${{ github.event.workflow_run.workflow_run.id }}
           name: "metadata"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get metadata
         id: get-metadata
