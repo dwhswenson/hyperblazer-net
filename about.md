@@ -65,7 +65,7 @@ If none of that fits the David Swenson you know, then it's probably not me.
 [berkeley]: http://chemistry.berkeley.edu
 [desres]: http://www.deshawresearch.com
 [telaviv]: http://www.tau.ac.il
-[molsim]: http://molsim.chem.uva.nl
-[hims]: http://www.science.uva.nl/hims
+[molsim]: https://www.compchem.nl
+[hims]: https://hims.uva.nl
 [uva]: http://www.uva.nl
 [mskcc]: http://www.mskcc.org
