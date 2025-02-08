@@ -23,4 +23,4 @@ Physics.
 Miller. "Application of a semiclassical model for the second-quantized
 many-electron Hamiltonian to nonequilibrium quantum transport: The resonant
 level model." Journal of Chemical Physics **134**, 164103
-(2011).](http://doi.org/{{ page.doi }})
+(2011).](https://doi.org/{{ page.doi }})

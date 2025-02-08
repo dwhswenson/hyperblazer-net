@@ -24,4 +24,4 @@ included.
 [Bin Li, Tal J. Levy, David W. H. Swenson, Eran Rabani, and William H.
 Miller. "A Cartesian quasi-classical model to nonequilibrium quantum
 transport: The Anderson impurity model." **138**, 104110
-(2013).](http://doi.org/{{ page.doi }})
+(2013).](https://doi.org/{{ page.doi }})

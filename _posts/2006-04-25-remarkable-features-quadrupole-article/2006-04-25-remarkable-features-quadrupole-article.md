@@ -22,4 +22,4 @@ Jaeger to illustrate the potential energy surface I developed.
 
 [Heather M. Jaeger, David W.H. Swenson, and Clifford E. Dykstra. "Remarkable
 Features in the Interactions of Quadrupolar Molecules." J. Phys. Chem A,
-**110**, 6399 (2006)](http://doi.org/{{ page.doi }}) 
+**110**, 6399 (2006)](https://doi.org/{{ page.doi }}) 

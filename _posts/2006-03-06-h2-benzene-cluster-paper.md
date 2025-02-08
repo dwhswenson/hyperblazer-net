@@ -16,4 +16,4 @@ has been published online by Chemical Physics.
 
 [David W.H. Swenson, Heather M. Jaeger, Clifford E. Dykstra. "Clustering of
 molecular hydrogen around benzene." Chem. Phys. **326**, 329
-(2006).](http://doi.org/{{ page.doi }})
+(2006).](https://doi.org/{{ page.doi }})

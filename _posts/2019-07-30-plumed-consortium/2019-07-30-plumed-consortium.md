@@ -16,9 +16,9 @@ teaser: >
 
 This paper introduces the PLUMED consortium, an organization focused on helping
 researchers (particularly in the field of rare events/enhanced sampling) to better communicate the protocols used in their simulations, with the aims of making research more reproducible and also easier it easier to adapt those protocols to new projects.
-It also introduces [PLUMED-NEST](http://www.plumed-nest.org), a tool to
+It also introduces [PLUMED-NEST](https://www.plumed-nest.org), a tool to
 accomplish those goals for users in the community of the
-[PLUMED](http:/www.plumed.org) software package.
+[PLUMED](https:/www.plumed.org) software package.
 
 When it was founded, the PLUMED consortium consisted of 74 members from 51
 institutions in 16 countries. I am honored to be one of the founding members of

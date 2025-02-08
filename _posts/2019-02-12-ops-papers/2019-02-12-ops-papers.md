@@ -37,9 +37,9 @@ on the E-CAM Centre of Excellence's website.
 [David W. H. Swenson, Jan-Hendrik Prinz, Frank Noe, John D. Chodera, and Peter
 G. Bolhuis, "OpenPathSampling: A Python Framework for Path Sampling
 Simulations. 1. Basics" J. Chem. Theory Comput. **15**, 813
-(2019).](http://doi.org/{{ page.doi[0] }})
+(2019).](https://doi.org/{{ page.doi[0] }})
 
 [David W. H. Swenson, Jan-Hendrik Prinz, Frank Noe, John D. Chodera, and Peter
 G. Bolhuis, "OpenPathSampling: A Python Framework for Path Sampling
 Simulations. 2. Building and Customizing Path Ensembles and Sample Schemes" J.
-Chem. Theory Comput. **15**, 837 (2019).](http://doi.org/{{ page.doi[1] }})
+Chem. Theory Comput. **15**, 837 (2019).](https://doi.org/{{ page.doi[1] }})

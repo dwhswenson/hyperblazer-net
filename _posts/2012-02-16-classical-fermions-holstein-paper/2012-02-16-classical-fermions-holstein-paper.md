@@ -20,4 +20,4 @@ in the Molecular Physics festschrift for Bill Miller, my PhD advisor.
 
 [David W.H. Swenson, Guy Cohen, and Eran Rabani. "A semiclassical model for
 the non-equilibrium quantum transport of a many-electron Hamiltonian coupled
-to phonons." Mol. Phys. **110**, 743 (2012).](http://doi.org/{{ page.doi }})
+to phonons." Mol. Phys. **110**, 743 (2012).](https://doi.org/{{ page.doi }})

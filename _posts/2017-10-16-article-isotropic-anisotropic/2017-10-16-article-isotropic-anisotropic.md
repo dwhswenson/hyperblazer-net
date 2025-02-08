@@ -31,4 +31,4 @@ cause a maximum in the association rates.
 [Arthur C. Newton, Ramses Kools, David W.H. Swenson, and Peter G. Bolhuis. "The
 opposing effects of isotropic and anisotropic attraction on the kinetics of
 proteins and colloids." J. Chem. Phys. **147**, 155101
-(2017)](http://doi.org/{{ page.doi }})
+(2017)](https://doi.org/{{ page.doi }})
