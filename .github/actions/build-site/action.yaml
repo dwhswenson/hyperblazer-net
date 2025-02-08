@@ -43,7 +43,7 @@ runs:
       shell: bash
       run: tar czf site.tgz ${{ inputs.site_dir }}
     - name: Upload artifact
-      # TODO: do not do this on scheduled runs
+      if: ${{ github.event_name != 'schedule' }}
       uses: actions/upload-artifact@v4
       with:
         name: site-build
