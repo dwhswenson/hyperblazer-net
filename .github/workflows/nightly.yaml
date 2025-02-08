@@ -1,7 +1,6 @@
 name: Nightly build
 
 on:
-  pull_request:  # DEBUG
   workflow_dispatch:
   schedule:
     - cron: '0 9 * * *'
@@ -12,7 +11,3 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/build-site
-      - uses: lycheeverse/lychee-action@v2
-        with:
-          fail: false  # TODO: change this once all the links pass!
-          args: --base ./_site --verbose --no-progress './_site/**/*.html'
