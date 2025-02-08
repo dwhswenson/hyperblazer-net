@@ -34,6 +34,7 @@ jobs:
       - name: Post comment with metadata
         uses: marocchino/sticky-pull-request-comment@v2
         with:
+          number: ${{ env.PR_NUM }}
           message: |
             This PR has been staged at ${{ secrets.STAGING_URL }}.
 
