@@ -11,8 +11,8 @@ This site uses:
 * A [heavily-customized version](#custom-theme) of the [Feeling
   Responsive][] Jekyll theme
 * [fancyBox3][] for lightboxes (PDFs and images)
-* ?? Fonts ??
-* ?? slides ??
+<!-- * ?? Fonts ?? -->
+<!-- * ?? slides ?? -->
 * [Vimeo][] to host videos (mostly of talks)
 <!-- 
 consider Copse for headlines, and something Helvetica/Eurostile-ish for body
@@ -38,13 +38,13 @@ would be to force deployment of the master branch of the GitHub repository.
 [GitHub]: https://github.com/dwhswenson/hyperblazer-net/
 [BlueHost]: https://www.bluehost.com
 
-## <a name="custom-theme"></a>Theme customizations
+<!-- ## <a name="custom-theme"></a>Theme customizations
 
 While I have made many, many minor modifications to [Phlow's][] [Feeling
 Responsive][] theme, here are the main ones:
 
-[Phlow's]: https://github.com/Phlow
-
+[Phlow's]: https://github.com/Phlow -->
+<!--
 **Category, tags, and project layout**
 
 Note: This assumes you're familiar with Jekyll nomenclature.
@@ -76,3 +76,5 @@ I wanted to keep the
 **Others**
 
 As listed above, I've made different font selection from the original.
+
+-->
