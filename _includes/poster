@@ -1,6 +1,6 @@
 <!-- TODO: add thumbnails for posters -->
 <div class="posterWrapper">
-<a href="/assets/posters/{{ include.poster }}.pdf" data-fancybox="">
+<a href="{{ site.baseurl }}/assets/posters/{{ include.poster }}.pdf" data-fancybox="">
 See poster
 </a>
 </div>

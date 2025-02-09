@@ -19,5 +19,4 @@ approach (perturbation theory). I don't think the specific approach he was
 working on ever led to anything useful, but this is a nice mathematical
 result.
 
-[Read PDF](/teaching/limc_detA_pl_cB.pdf){:pdflink}
-<!--<a href="/teaching/limc_detA_pl_cB.pdf" data-fancybox>Read PDF</a>-->
+[Read PDF]({{ site.baseurl }}/teaching/limc_detA_pl_cB.pdf){:pdflink}
