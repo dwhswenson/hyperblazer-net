@@ -69,10 +69,12 @@ jobs:
 
       - name: Identify whether the PR is already staged
         run: |
-          contents=aws s3 ls $TARGET
-          if [ -z "$contents" ]; then
+          count=$(aws s3 ls $TARGET | wc -l)
+          if [ $count > 1 ]; then
+            echo "Staging already exists"
             echo EXISTS=0 >> $GITHUB_ENV
           else
+            echo "Staging does not exist"
             echo EXISTS=1 >> $GITHUB_ENV
           fi
 
