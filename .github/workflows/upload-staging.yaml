@@ -67,14 +67,14 @@ jobs:
           TARGET="s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/"
           echo "TARGET=$TARGET" >> $GITHUB_ENV
 
-      #- name: Identify whether the PR is already staged
-        #run: |
-          #contents=aws s3 ls $TARGET
-          #if [ -z "$contents" ]; then
-            #echo EXISTS=0 >> $GITHUB_ENV
-          #else
-            #echo EXISTS=1 >> $GITHUB_ENV
-          #fi
+      - name: Identify whether the PR is already staged
+        run: |
+          contents=aws s3 ls $TARGET
+          if [ -z "$contents" ]; then
+            echo EXISTS=0 >> $GITHUB_ENV
+          else
+            echo EXISTS=1 >> $GITHUB_ENV
+          fi
 
       #- name: Copy existing content to staging
         #run: |
@@ -84,19 +84,20 @@ jobs:
           #echo "Copying current content to $TARGET"
           #aws s3 sync s3://${{ secrets.PROD_BUCKET }}/* $TARGET
 
-      - name: Extract artifact and sync with s3
+      - name: Extract artifact
         run: |
-          tar -xvf site.tgz
+          tar -xf site.tgz
 
+      # if we haven't staged before, just use aws s3 sync -- the smart stuff
+      # s3cmd sync tries to do can actually make it slower
       - name: Sync to s3
         run: |
           echo "Updating $TARGET"
-          s3cmd sync ./_site/ $TARGET
-          #if [ $EXISTS -eq 1 ]; then
-            #s3cmd sync ./_site/ $TARGET
-          #else
-            #s3cmd put --recursive ./_site/ $TARGET
-          #fi
+          if [ $EXISTS -eq 1 ]; then
+            s3cmd sync ./_site/ $TARGET
+          else
+            aws s3 sync ./_site/ $TARGET
+          fi
 
       - name: Clean up CSS content type metadata
         run: |
