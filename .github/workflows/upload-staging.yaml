@@ -89,6 +89,7 @@ jobs:
           tar -xvf site.tgz
 
       - name: Sync to s3
+        run: |
           echo "Updating $TARGET"
           s3cmd sync ./_site/ $TARGET
           #if [ $EXISTS -eq 1 ]; then
