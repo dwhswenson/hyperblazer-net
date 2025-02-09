@@ -24,3 +24,22 @@ jobs:
           PR_NUM=${{ github.event.pull_request.number }}
           echo "PR=$PR_NUM"
           s3cmd del --recursive s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/
+      - name: Add file to indicate cleanup
+        run: |
+          cat <<- EOF > pr-index.html
+            <html>
+              <head>
+                <title>Pull Request $PR_NUM has been closed</title>
+              </head>
+              <body>
+                <p>The staging site here has been deleted because the
+                associated pull request, <a href="">#$PR_NUM</a>, has been
+                merged or closed</p>
+              </body>
+            </html>
+          EOF
+          s3cmd put pr-index.html s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/index.html
+      - name: Update main staging index
+        run: |
+          source .github/workflows/generate-staging-index.sh > index.html
+          s3cmd put index.html s3://${{ secrets.STAGING_BUCKET }}/index.html

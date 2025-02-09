@@ -118,6 +118,11 @@ jobs:
           if-no-files-found: error
           retention-days: 1
 
+      - name: Update main staging index
+        run: |
+          source .github/workflows/generate-staging-index.sh > index.html
+          s3cmd put index.html s3://${{ secrets.STAGING_BUCKET }}/index.html
+
       - uses: myrotvorets/set-commit-status-action@v2.0.1
         if: ${{ always() }}
         env:
