@@ -6,7 +6,7 @@ main-image: logo.png
 main-image-alt: "OpenPathSampling Logo"
 ---
 
-![{{ page.main-image-alt }}]({{ site.urlimg }}{{ page.url }}{{ page.main-image }}){: .right-image}
+![{{ page.main-image-alt }}]({{ page.main-image }}){: .right-image}
 
 Path sampling methods, such as [transition path sampling (TPS)][TPS] and
 [transition interface sampling (TIS)][TIS] make it possible to extend the
