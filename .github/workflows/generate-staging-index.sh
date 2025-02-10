@@ -19,8 +19,6 @@ do
   if [ $count -gt 1 ]
   then
     echo -n "<b>$PR</b>"
-  else
-    echo -n "$PR"
   fi
   echo "</a></li>"
 done

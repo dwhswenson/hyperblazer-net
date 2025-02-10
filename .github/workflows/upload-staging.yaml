@@ -78,14 +78,6 @@ jobs:
             echo EXISTS=1 >> $GITHUB_ENV
           fi
 
-      #- name: Copy existing content to staging
-        #run: |
-          #date  # DEBUG
-          #TARGET="s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/"
-          #echo "TARGET=$TARGET" >> $GITHUB_ENV
-          #echo "Copying current content to $TARGET"
-          #aws s3 sync s3://${{ secrets.PROD_BUCKET }}/* $TARGET
-
       - name: Extract artifact
         run: |
           tar -xf site.tgz
@@ -117,11 +109,6 @@ jobs:
           path: metadata.json
           if-no-files-found: error
           retention-days: 1
-
-      - name: Update main staging index
-        run: |
-          source .github/workflows/generate-staging-index.sh > index.html
-          s3cmd put index.html s3://${{ secrets.STAGING_BUCKET }}/index.html
 
       - uses: myrotvorets/set-commit-status-action@v2.0.1
         if: ${{ always() }}

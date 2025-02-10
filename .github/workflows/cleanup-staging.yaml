@@ -26,6 +26,8 @@ jobs:
           s3cmd del --recursive s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/
       - name: Add file to indicate cleanup
         run: |
+          PR_NUM=${{ github.event.pull_request.number }}
+          echo "PR=$PR_NUM"
           cat <<- EOF > pr-index.html
             <html>
               <head>
@@ -41,5 +43,6 @@ jobs:
           s3cmd put pr-index.html s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/index.html
       - name: Update main staging index
         run: |
-          source .github/workflows/generate-staging-index.sh > index.html
-          s3cmd put index.html s3://${{ secrets.STAGING_BUCKET }}/index.html
+          echo TODO
+          #source .github/workflows/generate-staging-index.sh > index.html
+          #s3cmd put index.html s3://${{ secrets.STAGING_BUCKET }}/index.html
