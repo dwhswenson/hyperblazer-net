@@ -5,14 +5,14 @@ journal: JCTC
 doi: ['10.1021/acs.jctc.8b00626', '10.1021/acs.jctc.8b00627']
 layout: page
 title: Articles about OpenPathSampling published
-main-image: /assets/software/openpathsampling/logo.png
+main-image: /software/openpathsampling/logo.png
 teaser: >
   The two papers introducing OpenPathSampling, the software I've been
   developing for several years, have been published in the Journal of Chemical
   Theory and Computation.
 ---
 
-![{{ page.main-image-alt }}]({{ page.main-image }}){: .right-image}
+![{{ page.main-image-alt }}]({{ site.baseurl }}{{ page.main-image }}){: .right-image}
 
 Path sampling methods are powerful tools for studying rare events. However,
 they were not as widely-used as they might be, in part because there was no
