@@ -24,6 +24,7 @@ runs:
         ruby-version: ${{ inputs.ruby-version }}
 
     - name: Install dependencies
+      shell: bash
       run: bundle install
 
     - name: Versions
