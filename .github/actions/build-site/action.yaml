@@ -2,15 +2,15 @@ name: Build site
 description: Build the site and upload it as an artifact
 
 inputs:
-  site_dir:
-    description: The directory to build the site in
+  ruby-version:
+    description: The version of Ruby to use
     required: false
-    default: _site
-  site_url:
+    default: 3.2.0
+  site-url:
     description: The URL to the site
     required: false
     default: ""
-  base_url:
+  base-url:
     description: The base URL for the site
     required: false
     default: ""
@@ -21,8 +21,15 @@ runs:
   steps:
     - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.0.0 # Not needed with a .ruby-version file
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+        ruby-version: ${{ inputs.ruby-version }}
+
+    - name: Install dependencies
+      run: bundle install
+
+    - name: Versions
+      run: |
+        ruby --version
+        cat Gemfile.lock
 
     - name: Create jekyll config
       shell: bash
@@ -35,38 +42,13 @@ runs:
           echo "baseurl: /${{ inputs.base_url }}" >> _extra_config.yml
         fi
         cat _extra_config.yml
+
     - name: Build the site
       shell: bash
       run: bundle exec jekyll build --config "_config.yml,_extra_config.yml"
+
     - name: Check links
       uses: lycheeverse/lychee-action@v2
       with:
         fail: false  # TODO: change this once all the links pass!
         args: --base ./_site --verbose --no-progress './_site/**/*.html'
-    - name: Make artifact
-      shell: bash
-      run: tar czf site.tgz ${{ inputs.site_dir }}
-    - name: Upload artifact
-      if: ${{ github.event_name != 'schedule' }}
-      uses: actions/upload-artifact@v4
-      with:
-        name: site-build
-        path: site.tgz
-        if-no-files-found: error
-        retention-days: 1
-
-    - name: Store GitHub Metadata (PR only)
-      if: ${{ github.event_name == 'pull_request' }}
-      shell: bash
-      env:
-        GITHUB_HEAD_REF: ${{ github.head_ref }}
-      run: |
-        echo '{"pr": ${{ github.event.pull_request.number }}, "sha": "${{ github.event.pull_request.head.sha }}"}' > metadata.json
-    - name: Upload Metadata (PR only)
-      if: ${{ github.event_name == 'pull_request' }}
-      uses: actions/upload-artifact@v4
-      with:
-        name: metadata
-        path: metadata.json
-        if-no-files-found: error
-        retention-days: 1

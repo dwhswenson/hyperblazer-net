@@ -12,25 +12,11 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - name: Download metadata
-        uses: actions/download-artifact@v4
-        with:
-          # will this work?
-          run-id: ${{ github.event.workflow_run.id }}
-          name: "metadata"
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Get metadata
-        id: get-metadata
-        run: |
-          echo "PR_NUM=$(jq -r .pr metadata.json)" >> $GITHUB_ENV
-          echo "PR_HEADSHA=$(jq -r .sha metadata.json)" >> $GITHUB_ENV
-
-      - name: Show metadata
-        run: |
-          echo "PR_NUM=$PR_NUM"
-          echo "PR_HEADSHA=$PR_HEADSHA"
-
+        uses: ./.github/actions/get-metadata
+        with:
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Post comment with metadata
         uses: marocchino/sticky-pull-request-comment@v2
         with:

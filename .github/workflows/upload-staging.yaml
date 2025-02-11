@@ -1,11 +1,5 @@
 name: Upload to staging
 
-# This workflow takes an existing artiface from the "Test Site Build"
-# workflow, extracts the contents, and uploads them to the staging bucket.
-
-# TODO: once this is done; make a copy for production.
-# Change the workflow that triggers; change the bucket
-
 on:
   workflow_run:
     workflows: ["Build from PR"]
@@ -20,24 +14,14 @@ jobs:
       id-token: write
       contents: read
       statuses: write
+
     steps:
-      - name: Download metadata
-        uses: actions/download-artifact@v4
+      - name: Get metadata
+        uses: ./.github/actions/get-metadata
         with:
           run-id: ${{ github.event.workflow_run.id }}
           name: "metadata"
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Get metadata
-        id: get-metadata
-        run: |
-          echo "PR_NUM=$(jq -r .pr metadata.json)" >> $GITHUB_ENV
-          echo "PR_HEADSHA=$(jq -r .sha metadata.json)" >> $GITHUB_ENV
-
-      - name: Show metadata
-        run: |
-          echo "PR_NUM=$PR_NUM"
-          echo "PR_HEADSHA=$PR_HEADSHA"
         
       - uses: myrotvorets/set-commit-status-action@v2.0.1
         with:
@@ -86,22 +70,22 @@ jobs:
       # s3cmd sync tries to do can actually make it slower
       - name: Sync to s3
         run: |
-          echo "Updating $TARGET"
-          if [ $EXISTS -eq 1 ]; then
-            s3cmd sync ./_site/ $TARGET
-          else
+          if [ $EXISTS -eq 0 ]; then
             aws s3 sync ./_site/ $TARGET
+          else
+            s3cmd sync ./_site/ $TARGET
           fi
 
       - name: Clean up CSS content type metadata
         run: |
-          aws s3 cp s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/assets/ s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/assets/ --recursive --exclude "*" --include "*.css" --metadata-directive REPLACE --content-type "text/css"
+          aws s3 cp s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/ s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/assets/ --recursive --exclude "*" --include "*.css" --metadata-directive REPLACE --content-type "text/css"
 
       - name: Perform cache invalidation
         run: |
           echo "Invalidating staging cache"
           aws cloudfront create-invalidation --distribution-id ${{ secrets.STAGING_CLOUDFRONT }} --paths "/*"
 
+      # we need metadata for later workflows (staging comment)
       - name: Reupload metadata
         uses: actions/upload-artifact@v4
         with:
