@@ -13,3 +13,6 @@ jobs:
       - uses: ./.github/actions/build-site
         with:
           site-url: "https://www.hb.dwhswenson.net"
+      - uses: ./.github/actions/store-artifacts
+        with:
+          site-dir: "_site"
