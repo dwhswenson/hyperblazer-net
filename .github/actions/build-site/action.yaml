@@ -27,6 +27,7 @@ runs:
       run: bundle install
 
     - name: Versions
+      shell: bash
       run: |
         ruby --version
         cat Gemfile.lock

@@ -24,11 +24,13 @@ runs:
 
     - name: Get metadata
       id: get-metadata
+      shell: bash
       run: |
         echo "PR_NUM=$(jq -r .pr metadata.json)" >> $GITHUB_ENV
         echo "PR_HEADSHA=$(jq -r .sha metadata.json)" >> $GITHUB_ENV
 
     - name: Show metadata
+      shell: bash
       run: |
         echo "PR_NUM=$PR_NUM"
         echo "PR_HEADSHA=$PR_HEADSHA"
