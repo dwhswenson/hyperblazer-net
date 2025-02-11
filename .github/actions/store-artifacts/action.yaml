@@ -15,7 +15,7 @@ runs:
   steps:
     - name: Make artifact
       shell: bash
-      run: tar czf site.tgz ${{ inputs.site_dir }}
+      run: tar czf site.tgz ${{ inputs.site-dir }}
 
     - name: Upload artifact
       if: ${{ github.event_name != 'schedule' }}
