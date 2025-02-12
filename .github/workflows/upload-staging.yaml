@@ -5,7 +5,6 @@ on:
     workflows: ["Build from PR"]
     types:
       - completed
-  #workflow_call:  # for debugging
 
 jobs:
   stage-from-artifact:
@@ -17,8 +16,7 @@ jobs:
 
     steps:
       - name: Get metadata
-        #uses: ./.github/actions/get-metadata
-        uses: dwhswenson/static-site-workflows/actions/get-metadata@main
+        uses: dwhswenson/static-site-workflow/actions/get-metadata@main
         with:
           run-id: ${{ github.event.workflow_run.id }}
           name: "metadata"
@@ -31,60 +29,14 @@ jobs:
           context: 'Upload to staging'
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install s3cmd
-        run: |
-          python -m pip install s3cmd
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          run-id: ${{ github.event.workflow_run.id }}
-          name: "site-build"
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Configure AWS
-        uses: aws-actions/configure-aws-credentials@v4
+      - uses: dwhswenson/static-site-workflow/actions/upload-site@main
         with:
           aws-region: us-east-2
-          role-to-assume: ${{ secrets.STAGING_ROLE }}
-
-      - name: Save target prefix to environment
-        run: |
-          TARGET="s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/"
-          echo "TARGET=$TARGET" >> $GITHUB_ENV
-
-      - name: Identify whether the PR is already staged
-        run: |
-          count=$(aws s3 ls $TARGET | wc -l)
-          if [ $count > 1 ]; then
-            echo "Staging already exists"
-            echo EXISTS=0 >> $GITHUB_ENV
-          else
-            echo "Staging does not exist"
-            echo EXISTS=1 >> $GITHUB_ENV
-          fi
-
-      - name: Extract artifact
-        run: |
-          tar -xf site.tgz
-
-      # if we haven't staged before, just use aws s3 sync -- the smart stuff
-      # s3cmd sync tries to do can actually make it slower
-      - name: Sync to s3
-        run: |
-          if [ $EXISTS -eq 0 ]; then
-            aws s3 sync ./_site/ $TARGET
-          else
-            s3cmd sync ./_site/ $TARGET
-          fi
-
-      - name: Clean up CSS content type metadata
-        run: |
-          aws s3 cp s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/ s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/assets/ --recursive --exclude "*" --include "*.css" --metadata-directive REPLACE --content-type "text/css"
-
-      - name: Perform cache invalidation
-        run: |
-          echo "Invalidating staging cache"
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.STAGING_CLOUDFRONT }} --paths "/*"
+          aws-role: ${{ secrets.STAGING_ROLE }}
+          bucket-name: ${{ secrets.STAGING_BUCKET }}
+          cloudfront-distribution: ${{ secrets.STAGING_CLOUDFRONT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-number: ${{ env.PR_NUM }}
 
       # we need metadata for later workflows (staging comment)
       - name: Reupload metadata

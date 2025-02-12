@@ -13,8 +13,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Get metadata
-        #uses: ./.github/actions/get-metadata
-        uses: dwhswenson/static-site-workflows/actions/get-metadata@main
+        uses: dwhswenson/static-site-workflow/actions/get-metadata@main
         with:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
