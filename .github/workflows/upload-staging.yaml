@@ -38,6 +38,13 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pr-number: ${{ env.PR_NUM }}
 
+      - uses: dwhswenson/static-site-workflow/actions/update-staging-index@main
+        with:
+          aws-region: us-east-2
+          aws-role: ${{ secrets.STAGING_ROLE }}
+          bucket-name: ${{ secrets.STAGING_BUCKET }}
+          website-url: ${{ secrets.STAGING_WEBSITE }}
+
       # we need metadata for later workflows (staging comment)
       - name: Reupload metadata
         uses: actions/upload-artifact@v4

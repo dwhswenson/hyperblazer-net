@@ -17,8 +17,9 @@ jobs:
           aws-role: ${{ secrets.STAGING_ROLE }}
           bucket-name: ${{ secrets.STAGING_BUCKET }}
 
-      - name: Update main staging index
-        run: |
-          echo TODO
-          #source .github/workflows/generate-staging-index.sh > index.html
-          #s3cmd put index.html s3://${{ secrets.STAGING_BUCKET }}/index.html
+      - uses: dwhswenson/static-site-workflow/actions/update-staging-index@main
+        with:
+          aws-region: us-east-2
+          aws-role: ${{ secrets.STAGING_ROLE }}
+          bucket-name: ${{ secrets.STAGING_BUCKET }}
+          website-url: ${{ secrets.STAGING_WEBSITE }}
