@@ -17,7 +17,5 @@ jobs:
           base-url: ${{ github.event.pull_request.number }}
       #- uses: ./.github/actions/store-artifacts
       - uses: dwhswenson/static-site-workflow/actions/store-artifacts@main
-      #- uses: ./.github/actions/store-artifacts
-      - uses: dwhswenson/static-site-workflow/actions/store-artifacts@main
         with:
           site-dir: "_site"
