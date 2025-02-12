@@ -34,7 +34,7 @@ jobs:
         env:
           PR_REF: ${{ github.event.number }}
         run: |
-          tar -xvf site.tgz
+          tar xzf site.tgz
           s3cmd sync ./_site/ s3://${{ secrets.PROD_BUCKET }}/
       - name: Clean up CSS content type metadata
         run: |
