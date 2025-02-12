@@ -16,32 +16,18 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - name: Install s3cmd
-        run: |
-          python -m pip install s3cmd
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           run-id: ${{ github.event.workflow_run.id || github.run_id }}
           name: "site-build"
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Configure AWS
-        uses: aws-actions/configure-aws-credentials@v4
+
+      - uses: dwhswenson/static-site-workflow/actions/upload-site@main
         with:
           aws-region: us-east-2
-          role-to-assume: ${{ secrets.PROD_ROLE }}
-      - name: Extract artifact and sync with s3
-        env:
-          PR_REF: ${{ github.event.number }}
-        run: |
-          tar xzf site.tgz
-          s3cmd sync ./_site/ s3://${{ secrets.PROD_BUCKET }}/
-      - name: Clean up CSS content type metadata
-        run: |
-          aws s3 cp s3://${{ secrets.PROD_BUCKET }}/ s3://${{ secrets.PROD_BUCKET }}/assets/ --recursive --exclude "*" --include "*.css" --metadata-directive REPLACE --content-type "text/css"
-
-      - name: Perform cache invalidation
-        run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.PROD_CLOUDFRONT }} --paths "/*"
-
+          aws-role: ${{ secrets.PROD_ROLE }}
+          bucket-name: ${{ secrets.PROD_BUCKET }}
+          cloudfront-distribution: ${{ secrets.PROD_CLOUDFRONT }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 

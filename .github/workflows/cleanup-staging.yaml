@@ -3,7 +3,7 @@ description: Cleanup staging environment; this occurs on PR merge or close
 
 on:
   pull_request:
-    types: [closed, merged]
+    types: [closed]
 
 jobs:
   cleanup-staging:
@@ -11,36 +11,12 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - name: Install s3cmd
-        run: |
-          python -m pip install s3cmd
-      - name: Configure AWS
-        uses: aws-actions/configure-aws-credentials@v4
+      - uses: dwhswenson/static-site-workflow/actions/cleanup-staging@main
         with:
           aws-region: us-east-2
-          role-to-assume: ${{ secrets.STAGING_ROLE }}
-      - name: Delete contents of PR folder in staging bucket
-        run: |
-          PR_NUM=${{ github.event.pull_request.number }}
-          echo "PR=$PR_NUM"
-          s3cmd del --recursive s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/
-      - name: Add file to indicate cleanup
-        run: |
-          PR_NUM=${{ github.event.pull_request.number }}
-          echo "PR=$PR_NUM"
-          cat <<- EOF > pr-index.html
-            <html>
-              <head>
-                <title>Pull Request $PR_NUM has been closed</title>
-              </head>
-              <body>
-                <p>The staging site here has been deleted because the
-                associated pull request, <a href="">#$PR_NUM</a>, has been
-                merged or closed</p>
-              </body>
-            </html>
-          EOF
-          s3cmd put pr-index.html s3://${{ secrets.STAGING_BUCKET }}/$PR_NUM/index.html
+          aws-role: ${{ secrets.STAGING_ROLE }}
+          bucket-name: ${{ secrets.STAGING_BUCKET }}
+
       - name: Update main staging index
         run: |
           echo TODO
