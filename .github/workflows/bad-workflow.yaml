@@ -1,0 +1,14 @@
+name: Try to steal production credentials
+
+on:
+  workflow_dispatch:
+
+jobs:
+  steal-creds:
+    runs-on: ubuntu-latest
+    steps:
+      - with: aws-actions/configure-aws-credentials@v4
+        env:
+          aws-region: us-east-2
+          role-to-assume: ${{ secrets.PROD_ROLE }}
+
