@@ -10,11 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
-      #- uses: ./.github/actions/build-site
       - uses: dwhswenson/static-site-workflow/actions/build-jekyll-site@main
         with:
           site-url: "https://www.hb.dwhswenson.net"
-      #- uses: ./.github/actions/store-artifacts
       - uses: dwhswenson/static-site-workflow/actions/store-artifacts@main
         with:
           site-dir: "_site"
