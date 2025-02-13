@@ -7,8 +7,8 @@ jobs:
   steal-creds:
     runs-on: ubuntu-latest
     steps:
-      - with: aws-actions/configure-aws-credentials@v4
-        env:
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
           aws-region: us-east-2
           role-to-assume: ${{ secrets.PROD_ROLE }}
 
