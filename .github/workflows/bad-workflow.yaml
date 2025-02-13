@@ -6,6 +6,9 @@ on:
 jobs:
   steal-creds:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: aws-actions/configure-aws-credentials@v4
         with:
