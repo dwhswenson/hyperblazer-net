@@ -1,0 +1,18 @@
+name: Build from PR
+
+on: 
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dwhswenson/static-site-workflow/actions/build-jekyll-site@main
+        with:
+          site-url: ${{ vars.STAGING_WEBSITE }}
+          base-url: ${{ github.event.pull_request.number }}
+      - shell: bash
+        run: echo "Does this work"
