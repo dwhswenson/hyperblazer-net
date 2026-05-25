@@ -3,7 +3,7 @@ name: Build Jekyll site from PR
 on: 
   pull_request:
     branches:
-      - main
+      - master
 
 env:
   JEKYLL_SOURCE_DIR: "."

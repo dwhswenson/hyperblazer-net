@@ -3,7 +3,7 @@ name: Build Jekyll site from push
 on: 
   push:
     branches:
-      - main
+      - master
 
 env:
   JEKYLL_SOURCE_DIR: "."
