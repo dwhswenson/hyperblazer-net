@@ -1,18 +1,39 @@
-name: Build from push
+name: Build Jekyll site from push
 
 on: 
   push:
     branches:
-      - master
+      - main
+
+env:
+  JEKYLL_SOURCE_DIR: "."
+  JEKYLL_BASE_URL: ""
+  JEKYLL_OUTPUT_DIR: "_site"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
-      - uses: dwhswenson/static-site-workflow/actions/build-jekyll-site@main
         with:
-          site-url: "https://www.hb.dwhswenson.net"
-      - uses: dwhswenson/static-site-workflow/actions/store-artifacts@main
+          submodules: 'recursive'
+
+      - name: Build site
+        uses: omsf/static-site-tools/build/jekyll@main
         with:
-          site-dir: "_site"
+          base-url: ${{ env.JEKYLL_BASE_URL }}
+          source-directory: ${{ env.JEKYLL_SOURCE_DIR }}
+          output-directory: ${{ env.JEKYLL_OUTPUT_DIR }}
+
+      - name: Make artifact
+        shell: bash
+        run: tar czf site.tar.gz -C ${{ env.JEKYLL_SOURCE_DIR }} ${{ env.JEKYLL_OUTPUT_DIR }}
+
+      - name: Upload artifact
+        if: ${{ github.event_name != 'schedule' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: site.tar.gz
+          if-no-files-found: error
+          retention-days: 1

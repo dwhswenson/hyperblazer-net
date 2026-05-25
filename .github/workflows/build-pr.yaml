@@ -1,19 +1,49 @@
-name: Build from PR
+name: Build Jekyll site from PR
 
 on: 
   pull_request:
     branches:
-      - master
+      - main
+
+env:
+  JEKYLL_SOURCE_DIR: "."
+  JEKYLL_BASE_URL: ""
+  JEKYLL_OUTPUT_DIR: "_site"
+  # if you change JEKYLL_OUTPUT_DIR, also add a repository variable for it
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: dwhswenson/static-site-workflow/actions/build-jekyll-site@main
         with:
-          site-url: ${{ vars.STAGING_WEBSITE }}
-          base-url: ${{ github.event.pull_request.number }}
-      - uses: dwhswenson/static-site-workflow/actions/store-artifacts@main
+          submodules: 'recursive'
+
+      - name: Build site
+        #uses: omsf/static-site-tools/build/jekyll@main
+        uses: ./build/jekyll  # dev
         with:
-          site-dir: "_site"
+          base-url: ${{ env.JEKYLL_BASE_URL }}
+          source-directory: ${{ env.JEKYLL_SOURCE_DIR }}
+          output-directory: ${{ env.JEKYLL_OUTPUT_DIR }}
+
+      - name: Test site
+        uses: omsf/static-site-tools/common-tests@main
+        with:
+          site-directory: ${{ env.JEKYLL_SOURCE_DIR }}/${{ env.JEKYLL_OUTPUT_DIR}}
+          base-url: ${{ env.JEKYLL_BASE_URL }}
+
+
+
+      - name: Make artifact
+        shell: bash
+        run: tar czf site.tar.gz -C ${{ env.JEKYLL_SOURCE_DIR }} ${{ env.JEKYLL_OUTPUT_DIR }}
+
+      - name: Upload artifact
+        if: ${{ github.event_name != 'schedule' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: site.tar.gz
+          if-no-files-found: error
+          retention-days: 1
