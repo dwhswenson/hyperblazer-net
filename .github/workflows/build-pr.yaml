@@ -3,7 +3,7 @@ name: Build Jekyll site from PR
 on: 
   pull_request:
     branches:
-      - main
+      - master
 
 env:
   JEKYLL_SOURCE_DIR: "."
@@ -20,8 +20,7 @@ jobs:
           submodules: 'recursive'
 
       - name: Build site
-        #uses: omsf/static-site-tools/build/jekyll@main
-        uses: ./build/jekyll  # dev
+        uses: omsf/static-site-tools/build/jekyll@main
         with:
           base-url: ${{ env.JEKYLL_BASE_URL }}
           source-directory: ${{ env.JEKYLL_SOURCE_DIR }}
