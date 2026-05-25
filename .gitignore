@@ -6,3 +6,9 @@ Gemfile.lock
 # pixi environments
 .pixi
 *.egg-info
+
+# Terraform/OpenTofu working state
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
