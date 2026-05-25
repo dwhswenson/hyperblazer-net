@@ -95,6 +95,16 @@ exclude:
     - README.md
     - INSTALL.md
     - devtools/*
+    - .envrc
+    - .pixi/*
+    - pixi.*
+    - main.tf
+    - .terraform/*
+    - terraform.tfstate*
+    - plan.tfplan
+    - install.py
+    - .DS_Store
+
 
 
 # The language setting is used in /includes/header.html for html-settings
